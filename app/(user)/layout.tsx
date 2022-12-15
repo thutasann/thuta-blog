@@ -11,7 +11,7 @@ export default function RootLayout({
     <html>
       <body>
         <Header/>
-        <div className="mt-[10px]">
+        <div className="mt-[10px] px-5 mx-auto max-w-7xl">
           <Banner/>
           {children}
         </div>

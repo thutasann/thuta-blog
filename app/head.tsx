@@ -17,7 +17,7 @@ export default function Head() {
         <meta name="robots" content="index" />
         <meta name="google-site-verification" content="lt2KD97W6zCJHumr4ckLHj-3cMOvWcJl30mKEJiglz8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-        <meta name="keywords" content="Thuta Sann, Thuta Blogs, thutablog, Web Developer, BlockChain Developer, UI/UX Designer, Song Composer, FullStack Developer, Content Manager" />
+        <meta name="keywords" content="Thuta Sann, Thuta Sann Blogs, thutasannblogs, Web Developer, BlockChain Developer, UI/UX Designer, Song Composer, FullStack Developer, Content Manager" />
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"

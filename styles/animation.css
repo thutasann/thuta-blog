@@ -1,0 +1,26 @@
+@media screen and (max-width: 720px) {
+    .projectContainer {
+        height: 100% !important;
+    }
+}
+
+@keyframes bgScroll {
+    from {
+        background-position: center 100%;
+    }
+    to {
+        background-position:  center -363.88px;
+    }
+}
+
+.blogBg {
+    background-size: contain;
+    background-repeat: repeat-y;
+    animation: bgScroll infinite 16s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .blogBg {
+        animation: none;
+    }
+}
