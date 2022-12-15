@@ -10,6 +10,18 @@ function BlogList({posts}: Props) {
     return (
         <div>
             <hr className='mb-10 border-primary-teal' />
+            <div>   
+
+                {/* Posts */}
+                {
+                    posts.map(post => (
+                        <div key={post._id}>
+                            
+                        </div>
+                    ))
+                }
+
+            </div>
         </div>
     )
 }
