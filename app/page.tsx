@@ -1,9 +1,11 @@
 import React from 'react'
 
-function page() {
+function HomePage() {
     return (
-        <div>Home</div>
+        <div className='text-white'>
+            home
+        </div>
     )
 }
 
-export default page
+export default HomePage
