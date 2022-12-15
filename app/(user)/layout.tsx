@@ -1,3 +1,4 @@
+import Banner from "../../components/site/Banner"
 import Header from "../../components/site/Header"
 import "../../styles/globals.css"
 
@@ -10,7 +11,10 @@ export default function RootLayout({
     <html>
       <body>
         <Header/>
-        {children}
+        <div className="mt-[10px]">
+          <Banner/>
+          {children}
+        </div>
       </body>
     </html>
   )

@@ -3,6 +3,19 @@
 @tailwind utilities;
 
 
+.navBar{
+    background-color: rgba(#3a3a3a, 0.9);;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(140, 140, 140, 0.44);
+    z-index: 5;
+}
+
+
 @layer components{
     body{
         @apply bg-[#1F2937] text-[#fffdfd]

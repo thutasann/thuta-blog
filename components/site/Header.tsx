@@ -9,12 +9,12 @@ function Header() {
     const router = useRouter();
 
     return (
-        <header className='flex items-center justify-between px-10 py-5 space-x-2 font-bold'>
+        <header className='flex items-center justify-between px-10 py-5 space-x-2 font-bold navBar'>
             <div className='flex items-center space-x-2'>
                 <Image
                     src="/thutasann-blog.jpeg"
-                    width={90}
-                    height={90}
+                    width={60}
+                    height={60}
                     priority
                     quality={100}
                     alt="Thuta Sann blog"
