@@ -16,7 +16,11 @@ function BlogList({posts}: Props) {
                 {
                     posts.map(post => (
                         <div key={post._id}>
-                            
+                            <div>
+                                {/* <Image
+
+                                /> */}
+                            </div>
                         </div>
                     ))
                 }
