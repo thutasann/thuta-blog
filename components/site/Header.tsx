@@ -5,6 +5,9 @@ import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import Modal from './Modal';
 import DarkModeButton from './DarkModeButton';
+import Link from 'next/link';
+import Menu from './DropDown';
+
 
 function Header() {
 
@@ -30,8 +33,23 @@ function Header() {
                         onClick={() => router.push("/")}
                     />
                 </div>
+                <div className='items-center hidden px-4 space-x-5 md:flex text-md text-primary-black dark:text-gray-300'>
+                    <Link href={"/"} className="navLink">
+                        Home
+                    </Link>
+                    <Link href={"/blogs/"} className="navLink">
+                        Blogs
+                    </Link>
+                    <Link href={"/contact/"} className="navLink">
+                        Contact
+                    </Link>
+                </div>
+                
+                <Menu/>
+                
                 <div className='flex items-center space-x-3'>
                     <DarkModeButton/>
+                    
                     <button
                         className='flex items-center px-3 py-2 text-sm text-center text-white transition-all duration-150 ease-in-out rounded-full outline-none md:px-5 md:py-3 bg-primary-teal md:text-base hover:bg-secondary-teal hover:-translate-y-1 hover:shadow-lg'
                         onClick={openModal}
