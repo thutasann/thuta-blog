@@ -13,7 +13,7 @@ function Banner() {
                     favorite blogs in the Devosphere
                 </h2>
             </div>
-            <p className='max-w-sm mt-5 text-left text-gray-300 lg:text-right md:mt-2'>
+            <p className='max-w-sm mt-5 text-left lg:text-right md:mt-2'>
                 Software Development Features | Latest Tech Stacks in Software Development | 
                 Debugging Methods &#38; More!
             </p>

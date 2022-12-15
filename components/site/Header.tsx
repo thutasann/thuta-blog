@@ -1,12 +1,19 @@
 "use client";
 
-import React from 'react'
+import React, {useState} from 'react'
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
+import Modal from './Modal';
+import DarkModeButton from './DarkModeButton';
 
 function Header() {
 
+    const [isOpen ,setIsOpen] = useState<boolean>(false);
     const router = useRouter();
+
+    const openModal = () => {
+        setIsOpen(true)
+    }
 
     return (
         <header className='px-2 py-5 space-x-2 font-bold navBar'>
@@ -23,15 +30,20 @@ function Header() {
                         onClick={() => router.push("/")}
                     />
                 </div>
-                <div>
+                <div className='flex items-center space-x-3'>
+                    <DarkModeButton/>
                     <button
                         className='flex items-center px-3 py-2 text-sm text-center text-white transition-all duration-150 ease-in-out rounded-full outline-none md:px-5 md:py-3 bg-primary-teal md:text-base hover:bg-secondary-teal hover:-translate-y-1 hover:shadow-lg'
+                        onClick={openModal}
                     >
                         Subscribe 
                     </button>
                 </div>
             </div>
-
+            <Modal
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+            />
         </header>
         
     )

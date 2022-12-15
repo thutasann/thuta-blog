@@ -21,9 +21,6 @@
 
 
 @layer components{
-    body{
-        @apply bg-[#1F2937] text-[#fffdfd]
-    }
     .primary{
         @apply text-white
     }
