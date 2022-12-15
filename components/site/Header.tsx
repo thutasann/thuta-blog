@@ -19,13 +19,13 @@ function Header() {
     }
 
     return (
-        <header className='px-2 py-5 space-x-2 font-bold navBar'>
+        <header className='px-2 py-2 space-x-2 font-bold navBar'>
             <div className='flex items-center justify-between px-5 mx-auto max-w-7xl'>
                 <div className='flex items-center space-x-2'>
                     <Image
                         src="/thutasann-blog.jpeg"
-                        width={90}
-                        height={90}
+                        width={85}
+                        height={85}
                         priority
                         quality={100}
                         alt="Thuta Sann blog"
