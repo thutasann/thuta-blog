@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components{
+    body{
+        @apply bg-[#2C6269]
+    }
+    .primary{
+        @apply text-white
+    }
+}
