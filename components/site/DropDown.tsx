@@ -27,7 +27,7 @@ export default function Example() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                 >
-                    <Menu.Items className="absolute left-0 w-56 mt-2 text-white origin-top-right bg-gray-600 border-2 border-gray-300 divide-y divide-gray-100 rounded-md shadow-lg dark:bg-opacity-80 dark:bg-primary-black border-opacity-20">
+                    <Menu.Items className="absolute left-0 w-56 mt-2 text-white origin-top-right bg-gray-600 border-2 border-gray-300 divide-y divide-gray-100 rounded-md shadow-lg dark:bg-primary-black border-opacity-20">
                         <div className="px-1 py-2">
                             <Menu.Item>
                                 <button

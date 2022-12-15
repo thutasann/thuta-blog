@@ -25,12 +25,12 @@ function DarkModeButton() {
             {
                 currentTheme === "dark" ?(
                     <SunIcon
-                        className='w-8 h-8 text-yellow-500 cursor-pointer'
+                        className='w-8 h-8 text-yellow-500 transition-all duration-300 ease-in-out cursor-pointer hover:scale-110 transform-gpu'
                         onClick={() => setTheme("light")}
                     />
                 ) : (
                     <MoonIcon
-                        className='w-8 h-8 text-gray-700 cursor-pointer'
+                        className='w-8 h-8 transition-all duration-300 ease-in-out cursor-pointer text-primary-black hover:scale-110 transform-gpu'
                         onClick={() => setTheme("dark")}
                     />
                 )

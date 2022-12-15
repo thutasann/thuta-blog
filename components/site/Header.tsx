@@ -51,7 +51,7 @@ function Header() {
                     <DarkModeButton/>
                     
                     <button
-                        className='flex items-center px-3 py-2 text-sm text-center text-white transition-all duration-150 ease-in-out rounded-full outline-none md:px-5 md:py-3 bg-primary-teal md:text-base hover:bg-secondary-teal hover:-translate-y-1 hover:shadow-lg'
+                        className='flex items-center px-3 py-2 text-sm text-center text-white transition-all duration-300 ease-in-out rounded-full outline-none md:px-5 md:py-3 bg-primary-teal md:text-base hover:bg-secondary-teal hover:scale-105 hover:shadow-lg'
                         onClick={openModal}
                     >
                         Subscribe 

@@ -8,7 +8,9 @@ type Props = {
 function BlogList({posts}: Props) {
     console.log('posts.length', posts.length)
     return (
-        <div>BlogList</div>
+        <div>
+            <hr className='mb-10 border-primary-teal' />
+        </div>
     )
 }
 
