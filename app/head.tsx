@@ -6,7 +6,7 @@ let defaultMeta: Meta = {
   title: "Thuta Sann - Thoughts & Blogs",
     description: `Thuta's Personal Blog website where he would share his thoughts and blogs about latest Tech Stack, Software Development, Debugging Methods & more... `,
     image: "/thutasann-blog.jpeg",
-    ogimage: "/thutasann-blog-logo.png",
+    ogimage: "/thutasann-blog.jpeg",
     type: "website",
 };
 
@@ -33,12 +33,12 @@ export default function Head({ meta = defaultMeta  }) {
         <meta property="og:site_name" content="Thuta Sann" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
+        <meta property="og:image" content={meta.ogimage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@thutasann3" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
+        <meta name="twitter:image" content={meta.ogimage} />
     </>
   )
 }
