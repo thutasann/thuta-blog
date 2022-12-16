@@ -50,7 +50,7 @@ function BlogList({posts}: Props) {
                                             {post.categories.map(category => (
                                                 <div 
                                                     key={category._id}
-                                                    className="px-4 py-2 text-sm font-semibold text-center text-gray-100 rounded-full bg-primary-teal"
+                                                    className="px-4 py-2 text-sm font-semibold text-center text-gray-100 rounded-full bg-primary-teal hover:bg-secondary-teal"
                                                 >
                                                     <p>
                                                         {category.title}
