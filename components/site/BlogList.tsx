@@ -10,7 +10,6 @@ type Props = {
 }
 
 function BlogList({posts}: Props) {
-    console.log('posts.length', posts.length)
     return (
         <div>
             <hr className='mb-10 border-primary-teal' />
@@ -63,6 +62,9 @@ function BlogList({posts}: Props) {
 
                                 <div className='flex-1 mt-5'>
                                     <p className='text-lg font-bold underline'>{post.title}</p>
+                                    <p className='text-sm text-primary-black dark:text-gray-100 text-opacity-70 dark:text-opacity-60 line-clamp-2'>
+                                        {post.description}
+                                    </p>
                                 </div>
 
                                 <p className='flex items-center mt-5 font-bold group-hover:underline'>
@@ -71,7 +73,6 @@ function BlogList({posts}: Props) {
                                 </p>
                             </div>
                         </ClientSideRoute>
-
                     ))
                 }
 

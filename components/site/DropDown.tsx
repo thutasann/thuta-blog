@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { Bars3Icon } from '@heroicons/react/24/solid';
 
 
-export default function Example() {
+export default function DropDown() {
 
     const router = useRouter();
 
