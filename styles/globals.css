@@ -6,6 +6,12 @@
     *::selection{
         @apply text-secondary-teal;
     }
+    li{
+        @apply my-4 leading-6 text-justify;
+    }
+    p{
+        @apply leading-6 text-justify;
+    }
     body{
         @apply overflow-x-hidden;
     }

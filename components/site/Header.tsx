@@ -20,7 +20,7 @@ function Header() {
 
     return (
         <header className='px-2 py-2 space-x-2 font-bold navBar z-[9999]'>
-            <div className='flex items-center justify-between px-5 mx-auto max-w-7xl'>
+            <div className='flex items-center justify-between max-w-6xl px-5 mx-auto'>
                 <div className='flex items-center space-x-2'>
                     <Image
                         src="/thutasann-blog.jpeg"

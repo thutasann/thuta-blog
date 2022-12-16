@@ -19,7 +19,7 @@ export default function RootLayout({
       <Provider>
         <Header/>
         <Mouse/>
-        <div className="mt-[10px] px-5 mx-auto max-w-7xl">
+        <div className="mt-[10px] px-5 mx-auto max-w-6xl">
           <Banner/>
           {children}
         </div>

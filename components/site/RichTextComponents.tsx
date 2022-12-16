@@ -10,8 +10,8 @@ export const RichTextComponents = {
                     <Image
                         className='object-contain'
                         src={urlFor(value).url()}
-                        alt="Blog Content Image"
                         fill
+                        alt="Blog Content Image"
                         priority
                         quality={100}
                     />
@@ -21,7 +21,7 @@ export const RichTextComponents = {
     },
     list: {
         bullet: ({ children }: any) => (
-            <ul className='py-5 ml-10'>
+            <ul className='py-5 ml-10 list-disc'>
                 {children}
             </ul>
         ),
@@ -44,6 +44,11 @@ export const RichTextComponents = {
                 {children}
             </h4>
         ),
+        p: ({ children }: any) => (
+            <p className='py-10 text-2xl font-bold bg-red-500'>
+                {children}
+            </p>
+        ),
         blockquote: ({ children }: any) => (
             <blockquote
                 className='py-5 pl-5 my-5 border-l-4 border-l-primary-teal'
@@ -61,6 +66,7 @@ export const RichTextComponents = {
             return (
                 <Link
                     href={value.href}
+                    target="_blank"
                     rel={rel}
                     className="underline decoration-primary-teal hover:decoration-primary-black"
                 >

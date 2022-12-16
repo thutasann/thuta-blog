@@ -25,7 +25,7 @@ function BlogList({posts}: Props) {
                             <div className="flex flex-col cursor-pointer group">
                                 <div className='relative w-full transition-transform duration-500 ease-in-out h-80 drop-shadow-xl group-hover:scale-105'>
                                     <Image
-                                        className="object-cover object-left rounded-[20px] lg:object-center"
+                                        className="object-cover object-center rounded-[20px] lg:object-center"
                                         src={urlFor(post.mainImage).url()}
                                         loading="lazy"
                                         blurDataURL={urlFor(post.mainImage).url()}
@@ -35,7 +35,7 @@ function BlogList({posts}: Props) {
                                     <div className='absolute bottom-0 flex justify-between w-full p-5 text-white bg-black rounded-bl-[20px] rounded-br-[20px] bg-opacity-20 backdrop-blur-lg drop-shadow-full'>
                                         <div>
                                             <p className='font-bold'>{post.title}</p>
-                                            <p>
+                                            <p className='text-left'>
                                                 {
                                                     new Date(post._createdAt).toLocaleDateString("en-US", {
                                                         day: "numeric",
