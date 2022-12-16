@@ -124,6 +124,18 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                 value={post.body}
                 components={RichTextComponents}
             />
+
+            {/* Codde */}
+            <div className='mt-7'>
+                <h1 className='text-3xl font-bold'>Code block</h1>
+                <div className="block p-4 my-6 transition-all duration-300 border border-transparent rounded-md hover:rounded-sm bg-secondary-teal bg-opacity-30 bg-gradient-to-r ">
+                    <pre className={`command-line bg-transparent language-${post.code.language}`}>
+                        <code className={`text-sm line-number language-${post.code.language}`}>
+                        {post.code.code}
+                        </code>
+                    </pre>
+                </div>
+            </div>
         </article>
     )
 }

@@ -32,6 +32,14 @@ export default defineType({
       to: {type: 'author'},
     }),
     defineField({
+      name: "code",
+      title: "Enter Code Block",
+      type: "code",
+      options: {
+        language: 'js',
+      }
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',

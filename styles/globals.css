@@ -15,6 +15,9 @@
     body{
         @apply overflow-x-hidden;
     }
+    code::selection{
+        @apply text-white
+    }
     .primary{
         @apply text-white
     }
@@ -39,4 +42,9 @@
     width: 100%;
     border-bottom: 1px solid rgba(140, 140, 140, 0.44);
     z-index: 5;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    background-color: transparent !important;
 }
