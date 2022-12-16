@@ -32,12 +32,12 @@ export default function Head() {
         <meta property="og:site_name" content="Thuta Sann" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.ogimage} />
+        <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@thutasann3" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.ogimage} />
+        <meta name="twitter:image" content={meta.image} />
     </>
   )
 }
