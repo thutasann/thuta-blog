@@ -9,6 +9,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html>
       <body className="transition-all duration-700 bg-gray-100 dark:bg-[#1F2937] text-[#1a1a1a] dark:text-gray-300">

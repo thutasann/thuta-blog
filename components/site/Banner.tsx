@@ -1,8 +1,7 @@
-import React from 'react'
-
 function Banner() {
+
     return (
-        <div className='flex flex-col justify-between mb-10 font-bold py-7 md:flex-row md:space-x-5'>
+        <div className={`flex flex-col justify-between mb-10 font-bold py-7 md:flex-row md:space-x-5`}>
             <div>
                 <h1 className='text-7xl'>Thuta's <br/>Thoughts &#38; Blogs</h1>
                 <h2 className='mt-7 md:mt-2'>
