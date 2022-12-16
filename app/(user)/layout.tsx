@@ -1,3 +1,5 @@
+"use client";
+
 import Banner from "../../components/site/Banner"
 import Header from "../../components/site/Header"
 import "../../styles/globals.css"
