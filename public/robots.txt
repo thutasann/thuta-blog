@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://thutablog.vercel.app
+
+# Sitemaps
+Sitemap: https://thutablog.vercel.app/sitemap.xml
