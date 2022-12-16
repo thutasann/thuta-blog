@@ -30,6 +30,7 @@ export default async function DetailHead({ params: { slug } } : Props) {
         image: "/thutasann-blog.jpeg",
         ogimage: `${urlFor(post.mainImage).url()}`,
         type: "website",
+        url: `${process.env.NEXT_PUBLIC_VERCEL_URL}/blogs/${post.slug.current}`
     };
 
     return (
@@ -38,21 +39,3 @@ export default async function DetailHead({ params: { slug } } : Props) {
         </>
     )
 };
-
-
-// Static Site Generation
-export async function generateStaticParams(){
-    const query = groq`
-        *[_type == "post"]
-        {
-            slug
-        }
-    `;
-
-    const slugs: Post[] = await client.fetch(query);
-    const slugRoutes = slugs.map(slug => slug?.slug.current)
-
-    return slugRoutes?.map(slug => ({
-        slug
-    }))
-}

@@ -8,6 +8,7 @@ let defaultMeta: Meta = {
     image: "/thutasann-blog.jpeg",
     ogimage: "/thutasann-blog.jpeg",
     type: "website",
+    url: process.env.NEXT_PUBLIC_VERCEL_URL
 };
 
 export default function Head({ meta = defaultMeta  }) {
@@ -23,14 +24,14 @@ export default function Head({ meta = defaultMeta  }) {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://thutablog.vercel.app/`}
+          content={`${meta.url}`}
         />
         <link
           rel="canonical"
-          href={`https://thutablog.vercel.app/`}
+          href={`${meta.url}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Thuta Sann" />
+        <meta property="og:site_name" content="Thuta Sann Personal Blog WEbsite" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.ogimage} />

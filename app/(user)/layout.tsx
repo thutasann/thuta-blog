@@ -14,7 +14,6 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <link rel="canonical" href="https://thutablog.vercel.app"/>
       <body className="transition-all duration-700 bg-gray-100 dark:bg-[#1F2937] text-[#1a1a1a] dark:text-gray-300">
       <Provider>
         <Header/>
