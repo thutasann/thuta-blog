@@ -6,6 +6,7 @@ import Image from "next/image"
 import urlFor from '../../../../utils/urlFor';
 import { PortableText} from '@portabletext/react';
 import { RichTextComponents } from '../../../../components/site/RichTextComponents';
+import CodeBlock from '../../../../components/site/CodeBlock';
 
 type Props = {
     params: {
@@ -47,7 +48,7 @@ async function BlogDetailPage({ params : { slug } } : Props) {
     const post: Post = await client.fetch(query, { slug });
 
     return (
-        <article className='pb-28'>
+        <article className='pb-28 mt-7'>
 
             {/* BLOG HEADER */}
             <section className='space-y-2 text-white border border-primary-teal'>
@@ -118,23 +119,22 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                 </div>
             </section>
 
+            {/* Codde */}
+            {
+                post.code && (
+                    <>
+                        <h1 className='text-5xl font-bold mt-7'>Code Snippet</h1>
+                        <CodeBlock post={post}/>
+                    </>
+                )
+            }
+
             {/* BLOG BODY */}
             <PortableText
                 value={post.body}
                 components={RichTextComponents}
             />
 
-            {/* Codde */}
-            {/* <div className='mt-7'>
-                <h1 className='text-3xl font-bold'>Code block</h1>
-                <div className="block p-4 my-6 transition-all duration-300 border border-transparent rounded-md hover:rounded-sm bg-secondary-teal bg-opacity-30 bg-gradient-to-r ">
-                    <pre className={`command-line bg-transparent`}>
-                        <code className={`text-sm line-number`}>
-                            {post.code.code}
-                        </code>
-                    </pre>
-                </div>
-            </div> */}
         </article>
     )
 }
