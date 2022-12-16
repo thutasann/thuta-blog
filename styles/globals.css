@@ -33,6 +33,9 @@
     .codeBlock{
         @apply block p-6 overflow-y-auto my-6 transition-all border border-gray-100 border-opacity-40 bg-[#252526] ease-in-out duration-500 rounded-md hover:border-opacity-100;
     }
+    .searchInput{
+        @apply w-full outline-none bg-transparent border-b border-primary-black text-primary-black
+    }
 }
 
 .navBar{

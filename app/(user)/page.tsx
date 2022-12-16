@@ -7,7 +7,8 @@ import PreviewBlogList from '../../components/studio/PreviewBlogList';
 import BlogList from '../../components/site/BlogList';
 
 const query = groq`
-    *[_type=='post']{
+    *[_type=='post']
+    [0..1]{
         ...,
         author->,
         categories[]->

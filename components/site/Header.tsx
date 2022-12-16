@@ -7,15 +7,22 @@ import Modal from './Modal';
 import DarkModeButton from './DarkModeButton';
 import Link from 'next/link';
 import Menu from './DropDown';
+import { MagnifyingGlassIcon} from '@heroicons/react/24/solid';
+import SearchModal from './SearchMoal';
 
 
 function Header() {
 
     const [isOpen ,setIsOpen] = useState<boolean>(false);
+    const [isSearchOpen, setIsSerachOpen] = useState<boolean>(false);
     const router = useRouter();
 
     const openModal = () => {
         setIsOpen(true)
+    }
+
+    const openSearch = () =>{
+        setIsSerachOpen(true) 
     }
 
     return (
@@ -43,6 +50,12 @@ function Header() {
                     <Link href={"/snippets/"} className="navLink">
                         Snippets
                     </Link>
+                    <Link href={"#"} className="navLink">
+                        <MagnifyingGlassIcon 
+                            className='w-6 h-6' 
+                            onClick={openSearch}
+                        />
+                    </Link>
                 </div>
                 
                 <Menu/>
@@ -61,6 +74,10 @@ function Header() {
             <Modal
                 isOpen={isOpen}
                 setIsOpen={setIsOpen}
+            />
+            <SearchModal
+                isOpen={isSearchOpen}
+                setIsOpen={setIsSerachOpen}
             />
         </header>
         
