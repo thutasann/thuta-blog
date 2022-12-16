@@ -4,6 +4,8 @@ import { Post } from '../../../../types/typings';
 import { client } from '../../../../utils/sanity.client';
 import Image from "next/image"
 import urlFor from '../../../../utils/urlFor';
+import { PortableText} from '@portabletext/react';
+import { RichTextComponents } from '../../../../components/site/RichTextComponents';
 
 type Props = {
     params: {
@@ -26,6 +28,8 @@ async function BlogDetailPage({ params : { slug } } : Props) {
 
     return (
         <article className='pb-28'>
+
+            {/* BLOG HEADER */}
             <section className='space-y-2 text-white border border-primary-teal'>
                 <div className='relative flex flex-col justify-between min-h-56 md:flex-row'>
 
@@ -43,7 +47,7 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                     </div>
 
                     {/* Text */}
-                    <section className='z-50 w-full p-5 bg-opacity-20 bg-primary-teal'>
+                    <section className='w-full p-5 bg-opacity-20 bg-primary-teal'>
                         <div className='flex flex-col justify-between gap-y-5 md:flex-row'>
                             <div>
                                 <h1 className='text-4xl font-extrabold text-white'>{post.title}</h1>
@@ -94,6 +98,12 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                     </section>
                 </div>
             </section>
+
+            {/* BLOG BODY */}
+            <PortableText
+                value={post.body}
+                components={RichTextComponents}
+            />
         </article>
     )
 }
