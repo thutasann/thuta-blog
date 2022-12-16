@@ -7,10 +7,10 @@
         @apply text-secondary-teal;
     }
     li{
-        @apply my-4 leading-6 text-justify;
+        @apply my-4 leading-6;
     }
     p{
-        @apply leading-6 text-justify;
+        @apply leading-6;
     }
     body{
         @apply overflow-x-hidden;

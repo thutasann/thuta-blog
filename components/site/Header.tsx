@@ -40,8 +40,8 @@ function Header() {
                     <Link href={"/blogs/"} className="navLink">
                         Blogs
                     </Link>
-                    <Link href={"/contact/"} className="navLink">
-                        Contact
+                    <Link href={"/snippets/"} className="navLink">
+                        Snippets
                     </Link>
                 </div>
                 

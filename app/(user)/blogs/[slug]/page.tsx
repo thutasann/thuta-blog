@@ -52,7 +52,6 @@ async function BlogDetailPage({ params : { slug } } : Props) {
             {/* BLOG HEADER */}
             <section className='space-y-2 text-white border border-primary-teal'>
                 <div className='relative flex flex-col justify-between min-h-56 md:flex-row'>
-
                     {/* Image */}
                     <div
                         className='absolute top-0 w-full h-full p-10 opacity-20 blur-sm'
@@ -68,10 +67,10 @@ async function BlogDetailPage({ params : { slug } } : Props) {
 
                     {/* Text */}
                     <section className='w-full p-5 bg-opacity-20 bg-primary-teal'>
-                        <div className='flex flex-col justify-between gap-y-5 md:flex-row'>
-                            <div>
-                                <h1 className='text-4xl font-extrabold text-white'>{post.title}</h1>
-                                <p>
+                        <div className='flex flex-col justify-between gap-y-5'>
+                            <div className=''>
+                                <h1 className='text-4xl font-extrabold text-primary-black dark:text-white'>{post.title}</h1>
+                                <p className='text-primary-black dark:text-white'>
                                     {
                                         new Date(post._createdAt).toLocaleDateString("en-US", {
                                             day: "numeric",
@@ -93,7 +92,7 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                                     blurDataURL={urlFor(post.author.image).url()}
                                 />
                                 <div className='w-64'>
-                                    <p className='text-lg font-bold'>{post.author.name}</p>
+                                    <p className='text-lg font-bold text-primary-black dark:text-gray-200'>{post.author.name}</p>
                                     <div></div>
                                 </div>
                             </div>
@@ -101,7 +100,7 @@ async function BlogDetailPage({ params : { slug } } : Props) {
 
                         {/* description */}
                         <div>
-                            <h2 className='pt-10 mb-3 italic'>{post.description}</h2>
+                            <h2 className='pt-10 mb-3 italic text-primary-black dark:text-white'>{post.description}</h2>
                             <div className='flex items-start justify-start mt-auto space-x-2'>
                                 {
                                     post.categories.map((category) => (
@@ -126,16 +125,16 @@ async function BlogDetailPage({ params : { slug } } : Props) {
             />
 
             {/* Codde */}
-            <div className='mt-7'>
+            {/* <div className='mt-7'>
                 <h1 className='text-3xl font-bold'>Code block</h1>
                 <div className="block p-4 my-6 transition-all duration-300 border border-transparent rounded-md hover:rounded-sm bg-secondary-teal bg-opacity-30 bg-gradient-to-r ">
-                    <pre className={`command-line bg-transparent language-${post.code.language}`}>
-                        <code className={`text-sm line-number language-${post.code.language}`}>
-                        {post.code.code}
+                    <pre className={`command-line bg-transparent`}>
+                        <code className={`text-sm line-number`}>
+                            {post.code.code}
                         </code>
                     </pre>
                 </div>
-            </div>
+            </div> */}
         </article>
     )
 }

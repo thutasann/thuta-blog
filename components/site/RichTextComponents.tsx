@@ -31,21 +31,21 @@ export const RichTextComponents = {
     },
     block: {
         h1: ({ children }: any) => (
-            <h1 className='py-10 text-5xl font-bold'>{children}</h1>
+            <h1 className='text-5xl font-bold py-7'>{children}</h1>
         ),
         h2: ({ children }: any) => (
-            <h2 className='py-10 text-4xl font-bold'>{children}</h2>
+            <h2 className='text-4xl font-bold py-7'>{children}</h2>
         ),
         h3: ({ children }: any) => (
-            <h3 className='py-10 text-3xl font-bold'>{children}</h3>
+            <h3 className='text-3xl font-bold py-7'>{children}</h3>
         ),
         h4: ({ children }: any) => (
-            <h4 className='py-10 text-2xl font-bold'>
+            <h4 className='text-2xl font-bold py-7'>
                 {children}
             </h4>
         ),
         p: ({ children }: any) => (
-            <p className='py-10 text-2xl font-bold bg-red-500'>
+            <p className='text-2xl font-bold text-justify bg-red-500 py-7'>
                 {children}
             </p>
         ),

@@ -51,9 +51,9 @@ export default function DropDown() {
                                 <button
                                     className={`text-gray-300
                                     } group flex w-full items-center rounded-md px-2 py-2 text-sm hover:bg-black hover:bg-opacity-30`}
-                                    onClick={() => router.push("/contact/")}
+                                    onClick={() => router.push("/snippets/")}
                                 >
-                                    Contact
+                                    Snippets
                                 </button>
                             </Menu.Item>
                         </div>

@@ -8,12 +8,6 @@ type Base = {
     _updatedAt: string;
 }
 
-
-type Code = {
-    _type: string;
-    code: string;
-    language: string;
-}
 interface Post extends Base{
     author: Author;
     body: Block[];
@@ -22,7 +16,7 @@ interface Post extends Base{
     slug: Slug;
     title: string;
     description: string;
-    code: Code
+    code: any;
 }
 
 interface Author extends Base{
