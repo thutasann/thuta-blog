@@ -4,8 +4,9 @@ export default function Head() {
 
   const meta = {
     title: "Thuta Sann - Thoughts & Blogs",
-    description: `I'm a developer that loves building NEXTJS, ANGULAR & SpringBoot and IOS Mobile apps. `,
+    description: `Thuta's Personal Blog website where he would share his thoughts and blogs about latest Tech Stack, Software Development, Debugging Methods & more... `,
     image: "/thutasann-blog.jpeg",
+    ogimage: "/thutasann-blog-logo.png",
     type: "website",
   };
   
@@ -17,7 +18,7 @@ export default function Head() {
         <meta name="robots" content="index" />
         <meta name="google-site-verification" content="lt2KD97W6zCJHumr4ckLHj-3cMOvWcJl30mKEJiglz8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-        <meta name="keywords" content="Thuta Sann, Thuta Sann Blogs, thutasannblogs, Web Developer, BlockChain Developer, UI/UX Designer, Song Composer, FullStack Developer, Content Manager" />
+        <meta name="keywords" content="Thuta Sann, Thuta Sann Blogs, Thuta Sann Thoughts & Blogs, thutasannblogs, Web Developer, IOS Developer, Thuta Developer, Thuta Sann Software Development" />
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
@@ -31,12 +32,12 @@ export default function Head() {
         <meta property="og:site_name" content="Thuta Sann" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
+        <meta property="og:image" content={meta.ogimage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@thutasann3" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
+        <meta name="twitter:image" content={meta.ogimage} />
     </>
   )
 }

@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*::selection{
-    @apply text-secondary-teal
+@layer components{
+    *::selection{
+        @apply text-secondary-teal;
+    }
+    body{
+        @apply overflow-x-hidden;
+    }
+    .primary{
+        @apply text-white
+    }
+    .navLink{
+        @apply hover:underline decoration-primary-teal text-center decoration-2 active:underline underline-offset-8 rounded-full p-2 cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out  w-auto
+    }
 }
 
 .navBar{
@@ -17,14 +27,4 @@
     width: 100%;
     border-bottom: 1px solid rgba(140, 140, 140, 0.44);
     z-index: 5;
-}
-
-
-@layer components{
-    .primary{
-        @apply text-white
-    }
-    .navLink{
-        @apply hover:underline decoration-primary-teal text-center decoration-2 active:underline underline-offset-8 rounded-full p-2 cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out  w-auto
-    }
 }
