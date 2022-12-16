@@ -93,7 +93,7 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                                     blurDataURL={urlFor(post.author.image).url()}
                                 />
                                 <div className='w-64'>
-                                    <h3 className='text-lg font-bold'>{post.author.name}</h3>
+                                    <p className='text-lg font-bold'>{post.author.name}</p>
                                     <div></div>
                                 </div>
                             </div>
