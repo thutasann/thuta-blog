@@ -1,15 +1,16 @@
 "use client";
 
-export default function Head() {
+import { Meta } from "../types/typings";
 
-  const meta = {
-    title: "Thuta Sann - Thoughts & Blogs",
+let defaultMeta: Meta = {
+  title: "Thuta Sann - Thoughts & Blogs",
     description: `Thuta's Personal Blog website where he would share his thoughts and blogs about latest Tech Stack, Software Development, Debugging Methods & more... `,
     image: "/thutasann-blog.jpeg",
     ogimage: "/thutasann-blog-logo.png",
     type: "website",
-  };
-  
+};
+
+export default function Head({ meta = defaultMeta  }) {
 
   return (
     <>

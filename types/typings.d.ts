@@ -65,3 +65,13 @@ interface Title{
     _type: "string";
     current: string;
 }
+
+export interface Meta {
+    title?: string,
+    description?: string,
+    keywords?: string,
+    url?: string,
+    image?: string,
+    ogimage? :string,
+    type?: string,
+};
