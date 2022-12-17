@@ -84,7 +84,7 @@ function DrawerContent({ openDrawer, setOpenDrawer  } : Props) {
                                 <NoItem/>
                             )
                         }
-                        <SearchBlogs posts={filters}/>
+                        <SearchBlogs posts={filters} setOpenDrawer={setOpenDrawer}/>
                     </div>
                 ) :(
                     <div className="mt-7">

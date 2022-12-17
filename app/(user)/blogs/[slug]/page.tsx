@@ -51,7 +51,7 @@ async function BlogDetailPage({ params : { slug } } : Props) {
         <article className='pb-28 mt-7'>
 
             {/* BLOG HEADER */}
-            <section className='space-y-2 text-white border border-primary-teal'>
+            <section className='space-y-2 text-white border border-opacity-50 rounded-md border-primary-teal'>
                 <div className='relative flex flex-col justify-between min-h-56 md:flex-row'>
                     {/* Image */}
                     <div
