@@ -36,6 +36,13 @@
     .searchInput{
         @apply w-full outline-none bg-transparent border-b border-primary-black text-primary-black
     }
+
+    .inputBox{
+        @apply w-full py-3 bg-transparent border-b outline-none border-primary-black dark:border-gray-100;
+    }
+    .inputBox::selection{
+        @apply text-primary-black dark:text-gray-100;
+    }
 }
 
 .navBar{

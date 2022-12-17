@@ -17,7 +17,7 @@ function BlogList({posts}: Props) {
 
                 {/* Posts */}
                 {
-                    posts.map(post => (
+                    posts?.map(post => (
                         <ClientSideRoute
                             key={post._id}
                             route={`blogs/${post.slug.current}`}
