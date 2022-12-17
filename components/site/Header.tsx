@@ -58,7 +58,10 @@ function Header() {
                         </span>
                     </div>
                     
-                    <Menu/>
+                    <Menu
+                        openDrawer={openDrawer}
+                        setOpenDrawer={setOpenDrawer}
+                    />
                     
                     <div className='flex items-center space-x-3'>
                         <DarkModeButton/>
@@ -80,7 +83,7 @@ function Header() {
             <Drawer openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} >
                 {
                     openDrawer && (
-                        <DrawerContent openDrawer={openDrawer}/>
+                        <DrawerContent openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
                     )
                 }
             </Drawer>

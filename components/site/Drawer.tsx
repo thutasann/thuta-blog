@@ -20,7 +20,7 @@ export default function Drawer({ children, openDrawer, setOpenDrawer }: Props) {
         >
             <section
                 className={
-                " w-screen max-w-lg right-0 absolute bg-white dark:bg-[#272e39] text-primary-black dark:text-gray-100  h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
+                " w-screen max-w-lg right-0 absolute bg-white dark:bg-[#272e39] text-primary-black dark:text-gray-100  h-screen shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
                 (openDrawer ? " translate-x-0 " : " translate-x-full ")
                 }
             >
@@ -38,7 +38,7 @@ export default function Drawer({ children, openDrawer, setOpenDrawer }: Props) {
                 </article>
             </section>
             <section
-                className={`w-screen h-full cursor-pointer bg-primary-black ${openDrawer ? "bg-opacity-50" : "bg-opacity-0"}`}
+                className={`w-screen h-full cursor-pointer`}
                 onClick={() => {
                     setOpenDrawer(false);
                 }}
