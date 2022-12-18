@@ -36,6 +36,9 @@
     .category::selection{
         @apply text-gray-100;
     }
+    .cateBtn{
+        @apply px-3 py-2 transition-all duration-700 ease-in-out bg-transparent border rounded-full outline-none border-primary-teal hover:bg-primary-teal;
+    }
     .codeBlock{
         @apply block p-6 overflow-y-auto my-6 transition-all border border-gray-100 border-opacity-40 bg-[#252526] ease-in-out duration-500 rounded-md hover:border-opacity-100;
     }

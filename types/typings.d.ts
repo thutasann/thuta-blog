@@ -19,6 +19,14 @@ interface Post extends Base{
     code: any;
 }
 
+interface Category {
+    _createdAt: string;
+    _updatedAt: string;
+    _id: string;
+    title: string;
+    description: string;
+}
+
 interface Author extends Base{
     bio: Blockp[];
     image: Image;

@@ -14,7 +14,14 @@ const query = groq`
         categories[]->
     } | order(_createdAt desc)
 `;
-// Revaliate the Page every 30s
+
+const cateQuery = groq`
+    *[_type=='category']
+    {
+        ...,
+    } | order(_createdAt desc)
+`;
+
 export const revalidate = 30;
 
 async function BlogPage() {
@@ -37,10 +44,11 @@ async function BlogPage() {
     }
 
     const posts = await client.fetch(query);
+    const categories = await client.fetch(cateQuery);
 
     return (
         <div className='py-7'>
-            <BlogList posts={posts} title="All Blogs"/>
+            <BlogList posts={posts} title="All Blogs" categories={categories}/>
         </div>
     )
 }

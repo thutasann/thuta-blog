@@ -1,23 +1,41 @@
 import React from 'react'
-import { Post } from '../../types/typings'
+import { Category, Post } from '../../types/typings'
 import Image from "next/image"
 import urlFor from '../../utils/urlFor'
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid'
 import ClientSideRoute from './ClientSideRoute'
-import { usePathname } from 'next/navigation'
+import Categories from './Categories'
+import { HiAdjustmentsHorizontal } from 'react-icons/hi2'
 
 type Props = {
     posts: Post[],
+    categories: Category[],
     isHidden?: boolean,
     title: string,
 }
 
-function BlogList({posts, isHidden, title}: Props) {
+function BlogList({posts, isHidden, title, categories}: Props) {
     
     return (
         <div>
-            <div>
+            <div className='flex items-center justify-between'>
                 <h1 className='pageTitle'>{title}</h1>
+
+                {/* Desktop */}
+                <div className='hidden lg:block'>
+                    <Categories
+                        categories={categories}
+                    />      
+                </div>
+
+                {/* Mobile */}
+                <div className='block lg:hidden'>
+                    <button>
+                        <HiAdjustmentsHorizontal
+                            className='w-8 h-8'
+                        />
+                    </button>
+                </div>
             </div>
             <hr className={`mb-10 border-primary-teal ${isHidden && "hidden"}`} />
             
