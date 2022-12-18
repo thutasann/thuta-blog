@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from 'next-themes'
 
-function Provider({
+function ProviderTheme({
     children
 } :{
     children: React.ReactNode
@@ -14,4 +14,4 @@ function Provider({
     )
 }
 
-export default Provider
+export default ProviderTheme
