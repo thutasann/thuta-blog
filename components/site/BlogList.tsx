@@ -9,7 +9,7 @@ import { HiAdjustmentsHorizontal } from 'react-icons/hi2'
 
 type Props = {
     posts: Post[],
-    categories: Category[],
+    categories?: Category[],
     isHidden?: boolean,
     title: string,
 }

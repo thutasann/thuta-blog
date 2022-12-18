@@ -2,7 +2,7 @@ import React from 'react'
 import { Category } from '../../types/typings'
 
 type Props = {
-    categories: Category[],
+    categories?: Category[],
 }
 
 function Categories({ categories } : Props) {
