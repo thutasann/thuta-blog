@@ -4,15 +4,23 @@ import Image from "next/image"
 import urlFor from '../../utils/urlFor'
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid'
 import ClientSideRoute from './ClientSideRoute'
+import { usePathname } from 'next/navigation'
 
 type Props = {
-    posts: Post[]
+    posts: Post[],
+    isHidden?: boolean,
+    title: string,
 }
 
-function BlogList({posts}: Props) {
+function BlogList({posts, isHidden, title}: Props) {
+    
     return (
         <div>
-            <hr className='mb-10 border-primary-teal' />
+            <div>
+                <h1 className='pageTitle'>{title}</h1>
+            </div>
+            <hr className={`mb-10 border-primary-teal ${isHidden && "hidden"}`} />
+            
             <div className='grid grid-cols-1 gap-10 pb-24 md:grid-cols-2 gap-y-16'>   
 
                 {/* Posts */}

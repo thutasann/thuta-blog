@@ -1,8 +1,11 @@
 import React from 'react'
+import UnderDevelopment from '../../../components/site/UnderDevelopment'
 
 function SnippetPage() {
     return (
-        <div>Snippets Still In Development</div>
+        <div>
+            <UnderDevelopment/>
+        </div>
     )
 }
 

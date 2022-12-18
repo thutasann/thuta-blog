@@ -39,7 +39,7 @@ async function HomePage() {
 
     return (
         <div>
-            <BlogList posts={posts}/>
+            <BlogList posts={posts} title={"Recent Blogs"} />
         </div>
     )
 }
