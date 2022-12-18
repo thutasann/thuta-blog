@@ -1,10 +1,8 @@
 import React from 'react'
 import { previewData } from "next/headers";
-import "nprogress/nprogress.css";
 import { groq } from "next-sanity"
 import { client } from '../../utils/sanity.client';
 import PreviewSuspense from "../../components/site/PreviewSuspense";
-import useNProgress from '../../utils/useNProgress';
 import PreviewBlogList from '../../components/studio/PreviewBlogList';
 import BlogList from '../../components/site/BlogList';
 

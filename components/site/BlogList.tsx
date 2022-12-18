@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Category, Post } from '../../types/typings'
 import Image from "next/image"
 import urlFor from '../../utils/urlFor'
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid'
 import ClientSideRoute from './ClientSideRoute'
 import Categories from './Categories'
-import { HiAdjustmentsHorizontal } from 'react-icons/hi2'
 
 type Props = {
     posts: Post[],
@@ -15,33 +14,19 @@ type Props = {
 }
 
 function BlogList({posts, isHidden, title, categories}: Props) {
-    
     return (
         <div>
-            <div className='flex items-center justify-between'>
+            <div className='flex flex-col items-start justify-between mb-3 md:items-center md:flex-row'>
                 <h1 className='pageTitle'>{title}</h1>
-
-                {/* Desktop */}
-                <div className='hidden lg:block'>
+                <div className=''>
                     <Categories
                         categories={categories}
                     />      
-                </div>
-
-                {/* Mobile */}
-                <div className='block lg:hidden'>
-                    <button>
-                        <HiAdjustmentsHorizontal
-                            className='w-8 h-8'
-                        />
-                    </button>
                 </div>
             </div>
             <hr className={`mb-10 border-primary-teal ${isHidden && "hidden"}`} />
             
             <div className='grid grid-cols-1 gap-10 pb-24 md:grid-cols-2 gap-y-16'>   
-
-                {/* Posts */}
                 {
                     posts?.map(post => (
                         <ClientSideRoute
@@ -101,7 +86,6 @@ function BlogList({posts, isHidden, title, categories}: Props) {
                         </ClientSideRoute>
                     ))
                 }
-
             </div>
         </div>
     )

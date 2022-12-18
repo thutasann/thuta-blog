@@ -1,5 +1,5 @@
 import { usePathname } from 'next/navigation';
-import {AiFillFacebook, AiFillInstagram, AiFillTwitterSquare, AiOutlineGithub} from 'react-icons/ai';
+import {AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare, AiOutlineGithub} from 'react-icons/ai';
 import { FaGlobe } from 'react-icons/fa';
 import userData from '../../data/data';
 
@@ -38,8 +38,8 @@ function Banner() {
                     <a className='icons' href={userData.socialLinks.facebook} target="_blank" rel='noopener' aria-label="Thuta Sann Facebook">
                         <AiFillFacebook/>
                     </a>
-                    <a className='icons' href={userData.socialLinks.twitter} target="_blank" rel='noopener' aria-label="Thuta Sann Twitter">
-                        <AiFillTwitterSquare/>
+                    <a className='icons' href={userData.socialLinks.linkedin} target="_blank" rel='noopener' aria-label="Thuta Sann Portfolio">
+                        <AiFillLinkedin/>
                     </a>
                     <a className='icons' href={userData.socialLinks.portfolio} target="_blank" rel='noopener' aria-label="Thuta Sann Portfolio">
                         <FaGlobe/>

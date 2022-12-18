@@ -1,0 +1,3 @@
+type categoryState = {
+    name: string;
+}

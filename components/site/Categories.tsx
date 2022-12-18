@@ -12,7 +12,7 @@ function Categories({ categories } : Props) {
                 categories?.map((cate, index) =>(
                     <button
                         key={index}
-                        className="cateBtn"
+                        className={`cateBtn`}
                     >
                         {cate.title}
                     </button>
