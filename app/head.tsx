@@ -4,11 +4,11 @@ import { Meta } from "../types/typings";
 
 let defaultMeta: Meta = {
   title: "Thuta Sann - Thoughts & Blogs",
-    description: `Thuta's Personal Blog website where he would share his thoughts and blogs about latest Tech Stack, Software Development, Debugging Methods & more... `,
-    image: "/thutasann-blog.jpeg",
-    ogimage: "/thutasann-blog.jpeg",
-    type: "website",
-    url: process.env.NEXT_PUBLIC_VERCEL_URL
+  description: `Thuta's Personal Blog website where he would share his thoughts and blogs about latest Tech Stack, Software Development, Debugging Methods & more... `,
+  image: "/thutasann-blog.jpeg",
+  ogimage: "/thutasann-blog.jpeg",
+  type: "website",
+  url: process.env.NEXT_PUBLIC_VERCEL_URL
 };
 
 export default function Head({ meta = defaultMeta  }) {

@@ -21,6 +21,12 @@
     .primary{
         @apply text-white
     }
+    .icons{
+        @apply p-3 transition-all duration-700 ease-in-out rounded-full cursor-pointer bg-opacity-40 bg-secondary-teal hover:bg-opacity-100;
+    }
+    .icons svg{
+        @apply w-5 h-5;
+    }
     .navLink{
         @apply hover:underline decoration-primary-teal text-center decoration-2 active:underline underline-offset-8 rounded-full p-2 cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out  w-auto
     }

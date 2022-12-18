@@ -1,4 +1,7 @@
 import { usePathname } from 'next/navigation';
+import {AiFillFacebook, AiFillInstagram, AiFillTwitterSquare, AiOutlineGithub} from 'react-icons/ai';
+import { FaGlobe } from 'react-icons/fa';
+import userData from '../../data/data';
 
 function Banner() {
 
@@ -22,10 +25,28 @@ function Banner() {
                     favorite blogs in the Devosphere
                 </h2>
             </div>
-            <p className='max-w-sm mt-5 text-left lg:text-right md:mt-2'>
-                Software Development Features | Latest Tech Stacks in Software Development | 
-                Debugging Methods &#38; More!
-            </p>
+            <div className='flex flex-col items-start justify-start lg:items-end lg:justify-end'>
+                <p className='max-w-sm mt-5 text-left lg:text-right md:mt-2'>
+                    Software Development Features |  <br/>
+                    Latest Development Tech Stacks | <br/>
+                    Debugging Methods &#38; More
+                </p>
+                <div className='flex items-center mt-4 space-x-3 justify-evenly'>
+                    <a className='icons' href={userData.socialLinks.github} target="_blank" rel='noopener' aria-label="Thuta Sann GitHub">
+                        <AiOutlineGithub/>
+                    </a>
+                    <a className='icons' href={userData.socialLinks.facebook} target="_blank" rel='noopener' aria-label="Thuta Sann Facebook">
+                        <AiFillFacebook/>
+                    </a>
+                    <a className='icons' href={userData.socialLinks.twitter} target="_blank" rel='noopener' aria-label="Thuta Sann Twitter">
+                        <AiFillTwitterSquare/>
+                    </a>
+                    <a className='icons' href={userData.socialLinks.portfolio} target="_blank" rel='noopener' aria-label="Thuta Sann Portfolio">
+                        <FaGlobe/>
+                    </a>
+                </div>
+            </div>
+
         </div>
     )
 }
