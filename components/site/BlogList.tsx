@@ -22,8 +22,6 @@ type Props = {
 
 
 function BlogList({posts, isHidden, title, categories}: Props) {
-
-    const router = useRouter();
     
     const category  = useSelector(selectCate);
 
@@ -47,64 +45,62 @@ function BlogList({posts, isHidden, title, categories}: Props) {
                 {
                     filteredPosts?.length > 0 ?(
                         filteredPosts?.map(post => (
-                            <div 
-                                className="flex flex-col cursor-pointer group" 
+                            <ClientSideRoute
                                 key={post._id}
-                                onClick={
-                                    () => router.push(`/blogs/${post.slug.current}`)
-                                }
+                                route={`blogs/${post.slug.current}`}
                             >
-                                <div className='relative w-full transition-transform duration-500 ease-in-out h-80 drop-shadow-xl group-hover:scale-105'>
-                                    <Image
-                                        className="object-cover object-center rounded-[20px] lg:object-center"
-                                        src={urlFor(post.mainImage).url()}
-                                        loading="lazy"
-                                        blurDataURL={urlFor(post.mainImage).url()}
-                                        alt={post.author.name}
-                                        fill
-                                    />
-                                    <div className='absolute bottom-0 flex justify-between w-full p-5 text-white bg-black rounded-bl-[20px] rounded-br-[20px] bg-opacity-20 backdrop-blur-lg drop-shadow-full'>
-                                        <div>
-                                            <p className='font-bold'>{post.title}</p>
-                                            <p className='text-left'>
-                                                {
-                                                    new Date(post._createdAt).toLocaleDateString("en-US", {
-                                                        day: "numeric",
-                                                        month: "long",
-                                                        year: "numeric"
-                                                    })
-                                                }
-                                            </p>
-                                        </div>
-                                        <div className='flex flex-col items-center md:flex-row gap-y-2 md:gap-x-2'>
-                                            {post.categories.map(category => (
-                                                <div
-                                                    className="category"
-                                                    key={category._id}
-                                                >
-                                                    <Link
-                                                        href={`/category/${category.title}`}
+                                <div className="flex flex-col cursor-pointer group">
+                                    <div className='relative w-full transition-transform duration-500 ease-in-out h-80 drop-shadow-xl group-hover:scale-105'>
+                                        <Image
+                                            className="object-cover object-center rounded-[20px] lg:object-center"
+                                            src={urlFor(post.mainImage).url()}
+                                            loading="lazy"
+                                            blurDataURL={urlFor(post.mainImage).url()}
+                                            alt={post.author.name}
+                                            fill
+                                        />
+                                        <div className='absolute bottom-0 flex justify-between w-full p-5 text-white bg-black rounded-bl-[20px] rounded-br-[20px] bg-opacity-20 backdrop-blur-lg drop-shadow-full'>
+                                            <div>
+                                                <p className='font-bold'>{post.title}</p>
+                                                <p className='text-left'>
+                                                    {
+                                                        new Date(post._createdAt).toLocaleDateString("en-US", {
+                                                            day: "numeric",
+                                                            month: "long",
+                                                            year: "numeric"
+                                                        })
+                                                    }
+                                                </p>
+                                            </div>
+                                            <div className='flex flex-col items-center md:flex-row gap-y-2 md:gap-x-2'>
+                                                {post.categories.map(category => (
+                                                    <div
+                                                        className="category"
+                                                        key={category._id}
                                                     >
-                                                        {category.title}
-                                                    </Link>
-                                                </div>
-                                            ))}
+                                                        <p
+                                                        >
+                                                            {category.title}
+                                                        </p>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div className='flex-1 mt-5'>
-                                    <p className='text-lg font-bold underline'>{post.title}</p>
-                                    <p className='text-sm text-primary-black dark:text-gray-100 text-opacity-70 dark:text-opacity-60 line-clamp-2'>
-                                        {post.description}
+    
+                                    <div className='flex-1 mt-5'>
+                                        <p className='text-lg font-bold underline'>{post.title}</p>
+                                        <p className='text-sm text-primary-black dark:text-gray-100 text-opacity-70 dark:text-opacity-60 line-clamp-2'>
+                                            {post.description}
+                                        </p>
+                                    </div>
+    
+                                    <p className='flex items-center mt-5 font-bold group-hover:underline'>
+                                        Read Blog
+                                        <ArrowUpRightIcon className="w-4 h-4 ml-2" />
                                     </p>
                                 </div>
-
-                                <p className='flex items-center mt-5 font-bold group-hover:underline'>
-                                    Read Blog
-                                    <ArrowUpRightIcon className="w-4 h-4 ml-2" />
-                                </p>
-                            </div>
+                            </ClientSideRoute>
                         ))
                     ) : (
                         <div className='flex items-center justify-center'>

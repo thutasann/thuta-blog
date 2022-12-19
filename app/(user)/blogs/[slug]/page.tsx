@@ -69,7 +69,7 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                     </div>
 
                     {/* Text */}
-                    <section className='w-full p-5 bg-opacity-20 bg-primary-teal z-[99]'>
+                    <section className='w-full p-5 bg-opacity-20 bg-primary-teal'>
                         <div className='flex flex-col justify-between gap-y-5'>
                             <div className=''>
                                 <h1 className='text-4xl font-extrabold text-primary-black dark:text-white'>{post.title}</h1>

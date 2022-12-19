@@ -3,8 +3,8 @@ import UnderDevelopment from '../../../components/site/UnderDevelopment'
 
 function SnippetPage() {
     return (
-        <div>
-            <UnderDevelopment/>
+        <div className='py-7'>
+            <h1 className='pageTitle'>Code Snippets</h1>
         </div>
     )
 }
