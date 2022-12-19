@@ -108,8 +108,8 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                                 {
                                     post.categories.map((category) => (
                                         <Link
-                                            href={`/category/${category?.title}`}
                                             key={category._id}
+                                            href={`/category/${category.title}`}
                                             className='category'
                                         >
                                             {category.title}
