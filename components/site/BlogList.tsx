@@ -10,6 +10,8 @@ import Categories from './Categories'
 import { useSelector } from 'react-redux'
 import { selectCate } from '../../slices/categorySlice'
 import NoItem from './NoItem';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 type Props = {
     posts: Post[],
@@ -22,7 +24,6 @@ type Props = {
 function BlogList({posts, isHidden, title, categories}: Props) {
     
     const category  = useSelector(selectCate);
-    console.log('category', category)
 
     // @ts-ignore
     const filteredPosts = category?.name === "all" || isHidden || category === null ? posts : posts.filter((post) => post.categories.find(cate => cate.title === category?.name ));
@@ -73,14 +74,13 @@ function BlogList({posts, isHidden, title, categories}: Props) {
                                             </div>
                                             <div className='flex flex-col items-center md:flex-row gap-y-2 md:gap-x-2'>
                                                 {post.categories.map(category => (
-                                                    <div 
-                                                        key={category._id}
+                                                    <Link
+                                                        href={`/category/${category.title}`}
                                                         className="category"
+                                                        key={category._id}
                                                     >
-                                                        <p>
-                                                            {category.title}
-                                                        </p>
-                                                    </div>
+                                                        {category.title}
+                                                    </Link>
                                                 ))}
                                             </div>
                                         </div>

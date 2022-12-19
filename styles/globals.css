@@ -34,7 +34,7 @@
         @apply hidden;
     }
     .category{
-        @apply px-4 py-2 text-sm font-semibold text-center text-gray-100 rounded-full cursor-pointer bg-primary-teal hover:bg-secondary-teal;
+        @apply w-auto px-4 py-2 text-sm font-semibold text-center text-gray-100 rounded-full cursor-pointer bg-primary-teal hover:bg-secondary-teal;
     }
     .category::selection{
         @apply text-gray-100;

@@ -7,6 +7,7 @@ import urlFor from '../../../../utils/urlFor';
 import { PortableText} from '@portabletext/react';
 import { RichTextComponents } from '../../../../components/site/RichTextComponents';
 import CodeBlock from '../../../../components/site/CodeBlock';
+import Link from 'next/link';
 
 type Props = {
     params: {
@@ -56,7 +57,7 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                 <div className='relative flex flex-col justify-between min-h-56 md:flex-row'>
                     {/* Image */}
                     <div
-                        className='absolute top-0 w-full h-full p-10 opacity-20 blur-sm'
+                        className='absolute z-[-99] top-0 w-full h-full p-10 opacity-20 blur-sm'
                     >
                         <Image
                             className='object-cover object-center mx-auto -z-50'
@@ -68,7 +69,7 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                     </div>
 
                     {/* Text */}
-                    <section className='w-full p-5 bg-opacity-20 bg-primary-teal'>
+                    <section className='w-full p-5 bg-opacity-20 bg-primary-teal z-[99]'>
                         <div className='flex flex-col justify-between gap-y-5'>
                             <div className=''>
                                 <h1 className='text-4xl font-extrabold text-primary-black dark:text-white'>{post.title}</h1>
@@ -106,12 +107,13 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                             <div className='flex items-start justify-start mt-auto space-x-2'>
                                 {
                                     post.categories.map((category) => (
-                                        <p
+                                        <Link
+                                            href={`/category/${category?.title}`}
                                             key={category._id}
                                             className='category'
                                         >
                                             {category.title}
-                                        </p>
+                                        </Link>
                                     ))
                                 }
                             </div>

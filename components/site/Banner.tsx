@@ -7,7 +7,7 @@ function Banner() {
 
     let isHidden: boolean;
     const pathname = usePathname();
-    if(pathname?.startsWith("/blogs") || pathname?.startsWith("/snippets")){
+    if(pathname?.startsWith("/blogs") || pathname?.startsWith("/snippets") || pathname?.startsWith("/category")){
         isHidden = true;
     }else{
         isHidden = false;
