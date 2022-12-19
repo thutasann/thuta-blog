@@ -79,7 +79,7 @@ function BlogList({posts, isHidden, title, categories}: Props) {
                                                         key={category._id}
                                                     >
                                                         <Link
-                                                            href={`/category/${title}`}
+                                                            href={`/category/${category.title}`}
                                                         >
                                                             {category.title}
                                                         </Link>
