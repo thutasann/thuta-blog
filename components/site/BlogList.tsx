@@ -74,13 +74,16 @@ function BlogList({posts, isHidden, title, categories}: Props) {
                                             </div>
                                             <div className='flex flex-col items-center md:flex-row gap-y-2 md:gap-x-2'>
                                                 {post.categories.map(category => (
-                                                    <Link
-                                                        href={`/category/${category.title}`}
+                                                    <div
                                                         className="category"
                                                         key={category._id}
                                                     >
-                                                        {category.title}
-                                                    </Link>
+                                                        <Link
+                                                            href={`/category/${title}`}
+                                                        >
+                                                            {category.title}
+                                                        </Link>
+                                                    </div>
                                                 ))}
                                             </div>
                                         </div>
