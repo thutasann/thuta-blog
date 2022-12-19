@@ -21,7 +21,7 @@ type Props = {
 
 function BlogList({posts, isHidden, title, categories}: Props) {
     
-    const {name} : any = useSelector(selectCate);
+    const {name} : categoryState = useSelector(selectCate);
     const filteredPosts = name === "all" || isHidden ? posts : posts.filter((post) => post.categories.find(cate => cate.title === name ));
 
     return (
