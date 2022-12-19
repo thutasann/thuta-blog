@@ -7,3 +7,6 @@ NextJS-13 and Sanity-studio as a backend.
 - TypeScript
 - TailwindCSS
 - Sanity-studio
+- Redux
+- Redux-Persist
+- Redux-Toolkit

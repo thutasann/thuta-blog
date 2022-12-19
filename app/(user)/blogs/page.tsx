@@ -26,7 +26,6 @@ export const revalidate = 30;
 
 async function BlogPage() {
 
-
     if (previewData()){
         return (
             <PreviewSuspense

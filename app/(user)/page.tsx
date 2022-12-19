@@ -6,18 +6,26 @@ import PreviewSuspense from "../../components/site/PreviewSuspense";
 import PreviewBlogList from '../../components/studio/PreviewBlogList';
 import BlogList from '../../components/site/BlogList';
 
-const query = groq`
-    *[_type=='post']
-    [0..1]{
-        ...,
-        author->,
-        categories[]->
-    } | order(_createdAt desc)
-`;
 // Revaliate the Page every 30s
 export const revalidate = 30;
 
 async function HomePage() {
+
+    const query = groq`
+        *[_type=='post']
+        [0..1]{
+            ...,
+            author->,
+            categories[]->
+        } | order(_createdAt desc)
+    `;
+
+    const cateQuery = groq`
+    *[_type=='category']
+    {
+        ...,
+    } | order(_createdAt desc)
+    `;
 
     if (previewData()){
         return (
@@ -34,12 +42,13 @@ async function HomePage() {
             </PreviewSuspense>
         )
     }
-    
 
     const posts = await client.fetch(query);
+    const categories = await client.fetch(cateQuery);
+
     return (
         <div>
-            <BlogList posts={posts} title={"Recent Blogs"} />
+            <BlogList posts={posts} title={"Recent Blogs"} isHidden={true}/>
         </div>
     )
 }

@@ -1,4 +1,6 @@
-import { createSlice  } from '@reduxjs/toolkit';
+"use clients"
+
+import { createSlice } from "@reduxjs/toolkit";
 
 export const categorySlice = createSlice({
     name: 'category',
@@ -8,12 +10,17 @@ export const categorySlice = createSlice({
     },
 
     reducers: {
-        select: (state, action) => {
-            state.category = action.payload
-        }
+        chooseCategory: (state, action) => {
+            state.category = action.payload;
+        },
     },
 });
 
-export const { select  } = categorySlice.actions;
-export const selectCategory = (state: any) => state.category.category;
+
+export const { chooseCategory  } = categorySlice.actions;
+
+// @ts-ignore
+export const selectCate = (state) => state.category.category;
+
 export default categorySlice.reducer;
+

@@ -1,3 +1,3 @@
-type categoryState = {
+interface categoryState {
     name: string;
 }
