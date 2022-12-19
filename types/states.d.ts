@@ -1,3 +1,0 @@
-interface categoryState {
-    name: string;
-}

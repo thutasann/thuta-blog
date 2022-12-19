@@ -8,5 +8,4 @@ NextJS-13 and Sanity-studio as a backend.
 - TailwindCSS
 - Sanity-studio
 - Redux
-- Redux-Persist
 - Redux-Toolkit

@@ -5,28 +5,24 @@ import { client } from '../../utils/sanity.client';
 import PreviewSuspense from "../../components/site/PreviewSuspense";
 import PreviewBlogList from '../../components/studio/PreviewBlogList';
 import BlogList from '../../components/site/BlogList';
+import NoItem from '../../components/site/NoItem';
 
 // Revaliate the Page every 30s
 export const revalidate = 30;
 
-async function HomePage() {
-
-    const query = groq`
-        *[_type=='post']
-        [0..1]{
-            ...,
-            author->,
-            categories[]->
-        } | order(_createdAt desc)
-    `;
-
-    const cateQuery = groq`
-    *[_type=='category']
-    {
+const query = groq`
+    *[_type=='post']
+    [0..1]{
         ...,
+        author->,
+        categories[]->
     } | order(_createdAt desc)
-    `;
+`;
 
+
+
+async function HomePage() {
+    
     if (previewData()){
         return (
             <PreviewSuspense
@@ -44,11 +40,16 @@ async function HomePage() {
     }
 
     const posts = await client.fetch(query);
-    const categories = await client.fetch(cateQuery);
 
     return (
         <div>
-            <BlogList posts={posts} title={"Recent Blogs"} isHidden={true}/>
+            {
+                posts?.length > 0 ? (
+                    <BlogList posts={posts} title={"Recent Blogs"} isHidden={true}/>
+                ) :(
+                    <NoItem/>
+                )
+            }
         </div>
     )
 }

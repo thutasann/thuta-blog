@@ -13,7 +13,9 @@ type Props = {
 function Categories({ categories, isHidden } : Props) {
 
     const dispatch = useDispatch();
-    const category : categoryState = useSelector(selectCate)
+
+    // @ts-ignore
+    const category  = useSelector(selectCate)
 
     const handleSelect = (name?: string) => {
         dispatch(chooseCategory({
@@ -24,7 +26,8 @@ function Categories({ categories, isHidden } : Props) {
     return (
         <div className={`flex items-center space-x-3 ${isHidden && "hidden"}`}>
             <button
-                className={`cateBtn ${category.name === "all" && "bg-primary-teal"}`}
+                // @ts-ignore
+                className={`cateBtn ${category?.name === "all" && "bg-primary-teal"}`}
                 onClick={
                     () => handleSelect("all")
                 }
@@ -35,7 +38,7 @@ function Categories({ categories, isHidden } : Props) {
                 categories?.map((cate, index) =>(
                     <button
                         key={index}
-                        className={`cateBtn ${category.name === cate.title && "bg-primary-teal"}`}
+                        className={`cateBtn ${category?.name === cate.title && "bg-primary-teal"}`} // @ts-ignore
                         onClick={
                             ()=> handleSelect(cate?.title)
                         }
