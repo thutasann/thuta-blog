@@ -1,5 +1,5 @@
 import React from 'react'
-import UnderDevelopment from '../../../components/site/UnderDevelopment'
+import SnippetsList from '../../../components/site/SnippetsList'
 
 function SnippetPage() {
     return (
@@ -8,6 +8,9 @@ function SnippetPage() {
                 <h1 className='pageTitle'>Code Snippets</h1>
             </div>
             <hr className={`mb-10 border-primary-teal`} />
+
+            {/* Snippetes Lists */}
+            <SnippetsList/>
         </div>
     )
 }

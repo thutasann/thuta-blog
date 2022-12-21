@@ -58,6 +58,43 @@
     .pageTitle{
         @apply text-4xl font-[700] my-4 border-l-4 border-primary-teal pl-3 hover:border-secondary-teal transition-all duration-700 ease-in-out
     }
+    .sidebar{
+        @apply relative flex flex-col items-start;
+    }
+    .sidebar__content{
+        @apply w-full mt-5;
+    }
+    .sidebar__content ul{
+        @apply flex flex-col;
+    }
+    .sidebar__content ul li{
+        @apply flex items-center pb-2 transition-all duration-500 ease-in-out border-b border-opacity-50 cursor-pointer border-primary-teal hover:border-opacity-100;
+    }
+    .sidebar__content ul li svg{
+        @apply mr-3;
+    }
+    .snippet{
+        @apply relative flex flex-col w-full px-3 py-3 mb-5 transition-all duration-700 ease-in-out border border-gray-400 rounded-md cursor-pointer border-opacity-20 hover:border-opacity-100 hover:shadow-md;
+    }
+    .snippet h2{
+        @apply font-[700] text-xl mb-4;
+    }
+    .snippet p{
+        @apply text-[15px] text-primary-black dark:text-gray-400 text-opacity-70 italic;
+    }
+    .rectangle{
+        @apply p-3 rounded-full bg-primary-teal w-[20px] h-[25px] animate-pulse  absolute -right-2 -top-2;
+    }
+    
+}
+
+.rec.rec-arrow{
+    background-color: #2B6168;
+    color: white;
+}
+
+.kXteup:hover:enabled, .kXteup:focus:enabled{
+    background-color: #2D8995;
 }
 
 .navBar{
