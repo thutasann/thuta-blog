@@ -8,7 +8,7 @@ export default async function SnippetHead() {
         title: `Thuta Sann - Snippets`,
         description: `Code Snipeets especially ReactJS, NextJS, AngularTS, TailwindCSS, SpringBoot, NestJS, Swift and so on...`,
         image: "/thutasann-blog.jpeg",
-        ogimage: "/thutasann-blog.jpeg",
+        ogimage: "/thutasann-blog-code-snippets.jpeg",
         type: "website",
         url: `${process.env.NEXT_PUBLIC_VERCEL_URL}/snippets`
     };
