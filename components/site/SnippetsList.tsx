@@ -6,9 +6,11 @@ import {HiOutlineCode} from 'react-icons/hi';
 import { AiOutlineCalendar, AiOutlineTags } from 'react-icons/ai';
 import Carousel from 'react-elastic-carousel'
 import { CodeCategory, Snippet } from '../../types/typings';
+import { useDispatch, useSelector } from 'react-redux';
+import { chooseTag, selectTag } from '../../slices/tagSlice';
 
 const breakPoints = [
-    { width: 2, itemsToShow: 2 },
+    { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2, itemsToScroll: 2 },
     { width: 768, itemsToShow: 5 },
     { width: 1200, itemsToShow: 4 }
@@ -20,6 +22,22 @@ type Props = {
 }
 
 function SnippetsList({ snippets, tags } :Props) {
+
+    const dispatch = useDispatch();
+
+    //@ts-ignore
+    const tag = useSelector(selectTag);
+
+    const handleSelect = (name?: string) => {
+        dispatch(chooseTag({
+            name: name
+        }))
+    }
+
+    // @ts-ignore
+    const filteredSnippets = tag?.name === "all" || tag === null  ? snippets 
+                        : snippets.filter((item) => item.tags.find(val => val.title === tag?.name ));
+
     return (
         <section className='relative flex flex-col w-full space-y-7 md:space-y-0 md:flex-row'>
             {/* Sidebar */}
@@ -31,18 +49,37 @@ function SnippetsList({ snippets, tags } :Props) {
             <div className='block w-full mb-7 md:hidden'>
                 {/* @ts-ignore */}
                 <Carousel breakPoints={breakPoints} pagination={false}>
-                    {[1,3,4,5,6].map((i, index) => (
-                        <div key={index} className="px-4 cateBtn">
-                            NextJs
+                    <div 
+                        className={`w-full px-4 py-4 text-center bg-transparent border rounded-full border-primary-teal`}
+                        onClick={
+                            () => handleSelect("all")
+                        }
+                    >
+                        All
+                    </div>
+                    {tags.map((item, index) => (
+                        <div 
+                            key={index} 
+                            className={`w-full px-4 py-4 text-center bg-transparent border rounded-full border-primary-teal`}
+                            onClick={
+                                () => handleSelect(item.title)
+                            }
+                        >
+                            {item.title}
                         </div>
                     ))}
                 </Carousel>
             </div>
+            <h2 className='font-[700] text-2xl flex md:hidden items-center'>
+                <AiOutlineTags className='w-6 h-6 mr-3'/>
+                {/* @ts-ignore */}
+                Tags : {tag?.name ? tag?.name : tag?.name === "all" ? "All" : "All"}
+            </h2>
 
             {/* Main Content */}
             <div className='w-full pl-0 md:pl-7'>
                 {
-                    snippets.map((snippet, index) => (
+                    filteredSnippets.map((snippet, index) => (
                         <div className='snippet' key={index}>
                             <h2 className='flex flex-col items-start md:items-center md:flex-row'>
                                 <HiOutlineCode className='mb-3 mr-3 md:mb-0'/>
