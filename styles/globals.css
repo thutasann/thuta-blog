@@ -74,7 +74,7 @@
         @apply mr-3;
     }
     .snippet{
-        @apply relative flex flex-col w-full px-3 py-3 mb-5 transition-all duration-700 ease-in-out border border-gray-400 rounded-md cursor-pointer border-opacity-20 hover:border-opacity-100 hover:shadow-md;
+        @apply relative flex flex-col w-full px-3 py-3 mb-5 transition-all duration-700 ease-in-out border border-gray-400 rounded-md cursor-pointer border-opacity-20 hover:border-opacity-100 hover:shadow-md hover:bg-primary-black hover:bg-opacity-20 dark:hover:bg-gray-500 dark:hover:bg-opacity-20;
     }
     .snippet h2{
         @apply font-[700] text-xl mb-4;

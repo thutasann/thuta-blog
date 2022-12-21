@@ -11,7 +11,9 @@ function UnderDevelopment() {
                 width={400}
                 height={400}
                 alt="Thuta Sann Blog Under Development"
-                priority
+                loading='lazy'
+                placeholder='blur'
+                blurDataURL='/thutasann-blog-underdevelopment.gif'
                 quality={100}
                 src="/thutasann-blog-underdevelopment.gif"
             />

@@ -8,6 +8,7 @@ import Carousel from 'react-elastic-carousel'
 import { CodeCategory, Snippet } from '../../types/typings';
 import { useDispatch, useSelector } from 'react-redux';
 import { chooseTag, selectTag } from '../../slices/tagSlice';
+import { useRouter } from 'next/navigation';
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -18,12 +19,13 @@ const breakPoints = [
 
 type Props = {
     snippets: Snippet[],
-    tags: CodeCategory[]
+    tags: CodeCategory[],
 }
 
 function SnippetsList({ snippets, tags } :Props) {
 
     const dispatch = useDispatch();
+    const router = useRouter();
 
     //@ts-ignore
     const tag = useSelector(selectTag);
@@ -35,8 +37,7 @@ function SnippetsList({ snippets, tags } :Props) {
     }
 
     // @ts-ignore
-    const filteredSnippets = tag?.name === "all" || tag === null  ? snippets 
-                        : snippets.filter((item) => item.tags.find(val => val.title === tag?.name ));
+    const filteredSnippets = tag?.name === "all" || tag === null  ? snippets : snippets.filter((item) => item.tags.find(val => val.title === tag?.name ));
 
     return (
         <section className='relative flex flex-col w-full space-y-7 md:space-y-0 md:flex-row'>
@@ -80,7 +81,13 @@ function SnippetsList({ snippets, tags } :Props) {
             <div className='w-full pl-0 md:pl-7'>
                 {
                     filteredSnippets.map((snippet, index) => (
-                        <div className='snippet' key={index}>
+                        <div 
+                            className='snippet' 
+                            key={index}
+                            onClick={
+                                () => router.push(`/snippets/${snippet.slug.current}`)
+                            }
+                        >
                             <h2 className='flex flex-col items-start md:items-center md:flex-row'>
                                 <HiOutlineCode className='mb-3 mr-3 md:mb-0'/>
                                 {snippet.title}
