@@ -3,10 +3,9 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import {HiOutlineCode} from 'react-icons/hi'; 
-import { AiOutlineCalendar } from 'react-icons/ai';
+import { AiOutlineCalendar, AiOutlineTags } from 'react-icons/ai';
 import Carousel from 'react-elastic-carousel'
-
-let arr = [1,2,3,4,5];
+import { CodeCategory, Snippet } from '../../types/typings';
 
 const breakPoints = [
     { width: 2, itemsToShow: 2 },
@@ -15,14 +14,18 @@ const breakPoints = [
     { width: 1200, itemsToShow: 4 }
 ];
 
-function SnippetsList() {
+type Props = {
+    snippets: Snippet[],
+    tags: CodeCategory[]
+}
+
+function SnippetsList({ snippets, tags } :Props) {
     return (
         <section className='relative flex flex-col w-full space-y-7 md:space-y-0 md:flex-row'>
             {/* Sidebar */}
             <div className='w-[30%] hidden md:block'>
-                <Sidebar/>
+                <Sidebar tags={tags}/>
             </div>
-            
 
             {/* Carrousel */}
             <div className='block w-full mb-7 md:hidden'>
@@ -39,20 +42,44 @@ function SnippetsList() {
             {/* Main Content */}
             <div className='w-full pl-0 md:pl-7'>
                 {
-                    arr.map((i) => (
-                        <div className='snippet' key={i}>
+                    snippets.map((snippet, index) => (
+                        <div className='snippet' key={index}>
                             <h2 className='flex flex-col items-start md:items-center md:flex-row'>
                                 <HiOutlineCode className='mb-3 mr-3 md:mb-0'/>
-                                How to write effective Router Helper in NextJS.
+                                {snippet.title}
                             </h2>
-                            <p>In this Snippet, router helper in Next js will be written as Custom Hook </p>
-                            <span className='flex items-center mt-4 text-[15px] text-primary-black dark:text-gray-400 text-opacity-80'>
-                                <AiOutlineCalendar className='mr-3'/>  December 19, 2022
-                            </span>
+                            <p>{snippet.description}</p>
+                            
+                            <div className='flex items-center mt-4 space-x-4'>
+
+                                {/* Date */}
+                                <span className='flex items-center  text-[15px] text-primary-black dark:text-gray-400 text-opacity-80'>
+                                    <AiOutlineCalendar className='mr-1'/>  
+                                    {
+                                        new Date(snippet._createdAt).toLocaleDateString("en-US", {
+                                            day: "numeric",
+                                            month: "long",
+                                            year: 'numeric'
+                                        })
+                                    }
+                                </span>
+
+                                {/* Tags */}
+                                {snippet.tags.map(category => (
+                                    <div
+                                        key={category._id}
+                                        className="flex items-center text-primary-black dark:text-gray-400 text-opacity-80"
+                                    >
+                                        <AiOutlineTags className='mr-1'/> {category.title}
+                                    </div>
+                                ))}
+                            </div>
+
                         </div>
                     ))
                 }
             </div>
+            
         </section>
     )
 }

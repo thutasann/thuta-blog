@@ -10,8 +10,6 @@ import Categories from './Categories'
 import { useSelector } from 'react-redux'
 import { selectCate } from '../../slices/categorySlice'
 import NoItem from './NoItem';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 
 type Props = {
     posts: Post[],

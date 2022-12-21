@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import ProviderTheme from "../../components/site/Provider"
 import Mouse from "../../components/site/Mouse"
 import { store } from "../../store";
+import Footer from "../../components/site/Footer";
 
 
 export default function RootLayout({
@@ -24,6 +25,7 @@ export default function RootLayout({
               <div className="mt-[10px] px-5 mx-auto max-w-6xl">
                 <Banner/>
                 {children}
+                <Footer/>
               </div>
             </ProviderTheme>
           </Provider>

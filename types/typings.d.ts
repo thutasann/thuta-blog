@@ -19,7 +19,24 @@ interface Post extends Base{
     code: any;
 }
 
+interface Snippet extends Base{
+    author: Author;
+    title: string;
+    slug: Slug;
+    description: string;
+    tags: CodeCategory[];
+    code: any;
+}
+
 interface Category {
+    _createdAt: string;
+    _updatedAt: string;
+    _id: string;
+    title: string;
+    description: string;
+}
+
+interface CodeCategory{
     _createdAt: string;
     _updatedAt: string;
     _id: string;

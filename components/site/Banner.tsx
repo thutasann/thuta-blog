@@ -1,5 +1,5 @@
 import { usePathname } from 'next/navigation';
-import {AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare, AiOutlineGithub} from 'react-icons/ai';
+import {AiFillFacebook, AiFillLinkedin, AiOutlineGithub} from 'react-icons/ai';
 import { FaGlobe } from 'react-icons/fa';
 import userData from '../../data/data';
 
