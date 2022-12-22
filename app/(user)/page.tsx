@@ -6,6 +6,7 @@ import PreviewSuspense from "../../components/site/PreviewSuspense";
 import PreviewBlogList from '../../components/studio/PreviewBlogList';
 import BlogList from '../../components/site/BlogList';
 import NoItem from '../../components/site/NoItem';
+import GridBanner from '../../components/site/GridBanner';
 
 // Revaliate the Page every 30s
 export const revalidate = 30;
@@ -50,6 +51,10 @@ async function HomePage() {
                     <NoItem/>
                 )
             }
+
+            {/* Tech Stacks */}
+            <h1 className='pageTitle'>Tech Stacks</h1>
+            <GridBanner/>
         </div>
     )
 }

@@ -11,6 +11,7 @@ import Footer from "../../components/site/Footer";
 import ScrollToTop from "../../components/site/ScrollToTop";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { fadeVariants } from "../../animations";
 
 export default function RootLayout({
   children,
@@ -28,6 +29,7 @@ export default function RootLayout({
               <ProviderTheme>
                 {/* @ts-ignore */}
                 <ScrollToTop/>
+                <Header/>
                 <motion.div
                   key={route}
                   initial="initialState"
@@ -35,23 +37,10 @@ export default function RootLayout({
                   exit="exitState"
                   transition={{
                     duration: 0.75,
+                    ease: "easeOut",
                   }}
-                  variants={{
-                    initialState: {
-                      opacity: 0,
-                      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-                    },
-                    animateState: {
-                      opacity: 1,
-                      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-                    },
-                    exitState: {
-                      clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
-                    },
-                  }}
-                  className="base-page-size"
+                  variants={fadeVariants}
                 >
-                  <Header/>
                   <Mouse/>
                   <div className="mt-[10px] px-5 mx-auto max-w-6xl">
                     <Banner/>

@@ -10,6 +10,10 @@ import Categories from './Categories'
 import { useSelector } from 'react-redux'
 import { selectCate } from '../../slices/categorySlice'
 import NoItem from './NoItem';
+import { motion } from 'framer-motion';
+import { usePathname, useRouter } from 'next/navigation';
+import { fadeVariants } from '../../animations';
+import Link from 'next/link';
 
 type Props = {
     posts: Post[],
@@ -22,6 +26,8 @@ type Props = {
 function BlogList({posts, isHidden, title, categories}: Props) {
     
     const category  = useSelector(selectCate);
+    const route = usePathname();
+    const router = useRouter();
 
     // @ts-ignore
     const filteredPosts = category?.name === "all" || isHidden || category === null ? posts : posts.filter((post) => post.categories.find(cate => cate.title === category?.name ));
@@ -47,8 +53,19 @@ function BlogList({posts, isHidden, title, categories}: Props) {
                                 key={post._id}
                                 route={`blogs/${post.slug.current}`}
                             >
-                                <div className="flex flex-col cursor-pointer group">
-                                    <div className='relative w-full transition-transform duration-500 ease-in-out h-80 drop-shadow-xl group-hover:scale-105'>
+                                <motion.div 
+                                    className="flex flex-col cursor-pointer group"
+                                    key={route}
+                                    initial="initialState"
+                                    animate="animateState"
+                                    exit="exitState"
+                                    transition={{
+                                        duration: 0.75,
+                                        ease: "easeOut",
+                                    }}
+                                    variants={fadeVariants}
+                                >
+                                    <div className='relative w-full transition-transform duration-500 ease-in-out h-80 drop-shadow-xl'>
                                         <Image
                                             className="object-cover object-center rounded-[20px] lg:object-center"
                                             src={urlFor(post.mainImage).url()}
@@ -97,7 +114,7 @@ function BlogList({posts, isHidden, title, categories}: Props) {
                                         Read Blog
                                         <ArrowUpRightIcon className="w-4 h-4 ml-2" />
                                     </p>
-                                </div>
+                                </motion.div>
                             </ClientSideRoute>
                         ))
                     ) : (

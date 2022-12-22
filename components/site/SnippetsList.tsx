@@ -8,7 +8,9 @@ import Carousel from 'react-elastic-carousel'
 import { CodeCategory, Snippet } from '../../types/typings';
 import { useDispatch, useSelector } from 'react-redux';
 import { chooseTag, selectTag } from '../../slices/tagSlice';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
+import { fadeVariants } from '../../animations';
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -26,6 +28,7 @@ function SnippetsList({ snippets, tags } :Props) {
 
     const dispatch = useDispatch();
     const router = useRouter();
+    const route = usePathname();
 
     //@ts-ignore
     const tag = useSelector(selectTag);
@@ -78,7 +81,9 @@ function SnippetsList({ snippets, tags } :Props) {
             </h2>
 
             {/* Main Content */}
-            <div className='w-full pl-0 md:pl-7'>
+            <div 
+                className='w-full pl-0 md:pl-7'
+            >
                 {
                     filteredSnippets.map((snippet, index) => (
                         <div 
@@ -118,7 +123,6 @@ function SnippetsList({ snippets, tags } :Props) {
                                     </div>
                                 ))}
                             </div>
-
                         </div>
                     ))
                 }
