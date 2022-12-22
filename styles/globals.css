@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    scroll-behavior: smooth !important;
+}
+
 @layer components{
     *::selection{
         @apply text-secondary-teal;
@@ -13,7 +17,7 @@
         @apply leading-6;
     }
     body{
-        @apply overflow-x-hidden;
+        @apply overflow-x-hidden overflow-y-auto;
     }
     code::selection{
         @apply text-white
@@ -96,7 +100,6 @@
 .kXteup:hover:enabled, .kXteup:focus:enabled{
     background-color: #2D8995;
 }
-
 .navBar{
     background-color: rgba(#3a3a3a, 0.9);;
     backdrop-filter: blur(10px);
