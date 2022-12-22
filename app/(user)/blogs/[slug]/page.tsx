@@ -8,6 +8,9 @@ import { PortableText} from '@portabletext/react';
 import { RichTextComponents } from '../../../../components/site/RichTextComponents';
 import CodeBlock from '../../../../components/site/CodeBlock';
 import Link from 'next/link';
+import { AiFillFacebook, AiFillLinkedin, AiOutlineGithub } from 'react-icons/ai';
+import { FaTwitterSquare } from 'react-icons/fa';
+import CustomCopyToClipboard from '../../../../components/site/CopyToClipboard';
 
 type Props = {
     params: {
@@ -49,6 +52,11 @@ async function BlogDetailPage({ params : { slug } } : Props) {
 
     const post: Post = await client.fetch(query, { slug });
 
+    const baseUrl: string = `${process.env.NEXT_PUBLIC_VERCEL_URL}/blogs/${post.slug.current}`;
+    const facebookShareLink : string = `https://www.facebook.com/sharer/sharer.php?u=${baseUrl}`;
+    const twitterSharedLink : string = `https://twitter.com/share?text=${baseUrl}`;
+    const linkedInSharedLink: string = `https://www.linkedin.com/sharing/share-offsite/?url=${baseUrl}`;
+
     return (
         <article className='pb-28 mt-7'>
 
@@ -70,18 +78,35 @@ async function BlogDetailPage({ params : { slug } } : Props) {
 
                     {/* Text */}
                     <section className='w-full p-5 bg-opacity-20 bg-primary-teal'>
+
+                        {/* Title */}
                         <div className='flex flex-col justify-between gap-y-5'>
-                            <div className=''>
+                            <div className='flex flex-col space-y-3'>
+                                <div className='flex items-center space-x-3'>
+                                    <p className='text-primary-black dark:text-white'>
+                                        {
+                                            new Date(post._createdAt).toLocaleDateString("en-US", {
+                                                day: "numeric",
+                                                month: 'long',
+                                                year: "numeric"
+                                            })
+                                        }
+                                    </p>
+                                    <div className='flex items-start justify-start mt-auto space-x-2'>
+                                        {
+                                            post.categories.map((category) => (
+                                                <Link
+                                                    key={category._id}
+                                                    href={`/category/${category.title}`}
+                                                    className='category'
+                                                >
+                                                    {category.title}
+                                                </Link>
+                                            ))
+                                        }
+                                    </div>
+                                </div>
                                 <h1 className='text-4xl font-extrabold text-primary-black dark:text-white'>{post.title}</h1>
-                                <p className='text-primary-black dark:text-white'>
-                                    {
-                                        new Date(post._createdAt).toLocaleDateString("en-US", {
-                                            day: "numeric",
-                                            month: 'long',
-                                            year: "numeric"
-                                        })
-                                    }
-                                </p>
                             </div>
                             <div className='flex items-center space-x-2'>
                                 <Image
@@ -102,20 +127,25 @@ async function BlogDetailPage({ params : { slug } } : Props) {
                         </div>
 
                         {/* description */}
-                        <div>
-                            <h2 className='pt-10 mb-3 italic text-primary-black dark:text-white'>{post.description}</h2>
-                            <div className='flex items-start justify-start mt-auto space-x-2'>
-                                {
-                                    post.categories.map((category) => (
-                                        <Link
-                                            key={category._id}
-                                            href={`/category/${category.title}`}
-                                            className='category'
-                                        >
-                                            {category.title}
-                                        </Link>
-                                    ))
-                                }
+                        <div className="mt-4">
+                            <h2 className='mb-3 italic text-primary-black dark:text-white'>{post.description}</h2>
+                        </div>
+
+                        {/* Social */}
+                        <div className='mt-4'>
+                            <hr className='mb-4 border-gray-400 border-opacity-50' />
+                            <h3 className='text-primary-black dark:text-gray-100'>Share This Blog To :</h3>
+                            <div className='flex items-center mt-2 space-x-3 text-primary-black dark:text-gray-100'>
+                                <a className='icons' href={facebookShareLink} target="_blank" rel='noopener' aria-label="Facebook Share">
+                                    <AiFillFacebook/>
+                                </a>
+                                <a className='icons' href={linkedInSharedLink} target="_blank" rel='noopener' aria-label="LinkedIn Shared">
+                                    <AiFillLinkedin/>
+                                </a>
+                                <a className='icons' href={twitterSharedLink} target="_blank" rel='noopener' aria-label="Twitter Share">
+                                    <FaTwitterSquare/>
+                                </a>
+                                <CustomCopyToClipboard baseUrl={baseUrl}  />
                             </div>
                         </div>
                     </section>

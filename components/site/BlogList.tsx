@@ -13,7 +13,6 @@ import NoItem from './NoItem';
 import { motion } from 'framer-motion';
 import { usePathname, useRouter } from 'next/navigation';
 import { fadeVariants } from '../../animations';
-import Link from 'next/link';
 
 type Props = {
     posts: Post[],

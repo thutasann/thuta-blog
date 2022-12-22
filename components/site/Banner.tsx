@@ -2,6 +2,7 @@ import { usePathname } from 'next/navigation';
 import {AiFillFacebook, AiFillLinkedin, AiOutlineGithub} from 'react-icons/ai';
 import { FaGlobe } from 'react-icons/fa';
 import userData from '../../data/data';
+import { TypingText } from './CustomText';
 
 function Banner() {
 
