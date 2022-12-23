@@ -7,3 +7,4 @@ Host: https://thutablog.vercel.app
 
 # Sitemaps
 Sitemap: https://thutablog.vercel.app/sitemap.xml
+Sitemap: https://thutablog.vercel.app/server-sitemap-index.xml
