@@ -36,10 +36,6 @@ function Alert({ alert, setAlert}: Props) {
                     <FaCopy className='mt-[3px]'/>
                 </span>
 
-                <div className="block md:hidden">
-                    <p className="block text-[12px] text-opacity-50 font-[600]"> Copied </p>
-                </div>
-
                 <div className="flex-1 hidden md:block">
                     <p className="block text-[12px] text-opacity-50 font-[600]"> Copied To Clipboard </p>
                 </div>
@@ -50,7 +46,7 @@ function Alert({ alert, setAlert}: Props) {
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        stroke-width="1.5"
+                        strokeWidth="1.5"
                         stroke="currentColor"
                         className="hidden w-6 h-6 md:block"
                         onClick={

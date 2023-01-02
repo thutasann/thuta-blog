@@ -47,6 +47,9 @@ function Header() {
                         <Link href={"/blogs/"} className="navLink">
                             Blogs
                         </Link>
+                        <Link href={"/articles/"} className="navLink">
+                            Articles
+                        </Link>
                         <Link href={"/snippets/"} className="navLink">
                             Snippets
                         </Link>
