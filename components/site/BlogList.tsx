@@ -68,7 +68,8 @@ function BlogList({posts, isHidden, title, categories}: Props) {
                                         <Image
                                             className="object-cover object-center rounded-[20px] lg:object-center"
                                             src={urlFor(post.mainImage).url()}
-                                            loading="lazy"
+                                            loading="eager"
+                                            placeholder='blur'
                                             blurDataURL={urlFor(post.mainImage).url()}
                                             alt={post.author.name}
                                             fill

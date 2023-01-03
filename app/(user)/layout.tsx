@@ -12,6 +12,8 @@ import ScrollToTop from "../../components/site/ScrollToTop";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeVariants } from "../../animations";
+import NextNProgress from 'nextjs-progressbar'
+
 
 export default function RootLayout({
   children,
@@ -25,11 +27,17 @@ export default function RootLayout({
     <html lang="en">
       <AnimatePresence>
         <body className="bg-gray-100 dark:bg-[#1F2937] text-[#1a1a1a] dark:text-gray-300">
+          <NextNProgress
+              color='#FF0000'
+              startPosition={0.3}
+              stopDelayMs={100}
+              height={3}
+              options={{ showSpinner: false }}
+            />
             <Provider store={store}>
               <ProviderTheme>
                 {/* @ts-ignore */}
                 <ScrollToTop/>
-                <Header/>
                 <motion.div
                   key={route}
                   initial="initialState"
@@ -42,6 +50,7 @@ export default function RootLayout({
                   variants={fadeVariants}
                 >
                   <Mouse/>
+                  <Header/>
                   <div className="mt-[10px] px-5 mx-auto max-w-6xl">
                     <Banner/>
                     {children}

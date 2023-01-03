@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { AiFillFacebook, AiFillLinkedin, AiOutlineGithub } from 'react-icons/ai';
 import { FaTwitterSquare } from 'react-icons/fa';
 import CustomCopyToClipboard from '../../../../components/site/CopyToClipboard';
+import UnderDevelopment from '../../../../components/site/UnderDevelopment';
 
 type Props = {
     params: {
@@ -61,7 +62,7 @@ async function BlogDetailPage({ params : { slug } } : Props) {
         <article className='pb-28 mt-7'>
 
             {/* BLOG HEADER */}
-            <section className='space-y-2 text-white border border-opacity-50 rounded-md border-primary-teal'>
+            <section className='hidden space-y-2 text-white border border-opacity-50 rounded-md border-primary-teal'>
                 <div className='relative flex flex-col justify-between min-h-56 md:flex-row'>
                     {/* Image */}
                     <div
@@ -153,20 +154,22 @@ async function BlogDetailPage({ params : { slug } } : Props) {
             </section>
 
             {/* Codde */}
-            {
+            {/* {
                 post.code && (
                     <>
                         <h1 className='text-5xl font-bold mt-7'>Code Snippet</h1>
                         <CodeBlock post={post}/>
                     </>
                 )
-            }
+            } */}
+
+            <UnderDevelopment/>
 
             {/* BLOG BODY */}
-            <PortableText
+            {/* <PortableText
                 value={post.body}
                 components={RichTextComponents}
-            />
+            /> */}
 
         </article>
     )
