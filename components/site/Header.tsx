@@ -31,8 +31,8 @@ function Header() {
                     <div className='flex items-center space-x-2'>
                         <Image
                             src="/thutasann-blog.jpeg"
-                            width={85}
-                            height={85}
+                            width={70}
+                            height={70}
                             priority
                             quality={100}
                             alt="Thuta Sann blog"

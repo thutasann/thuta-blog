@@ -61,6 +61,15 @@ export default function DropDown({ openDrawer, setOpenDrawer } : Props ) {
                                     <button
                                         className={`text-gray-300
                                         } group flex w-full items-center rounded-md px-2 py-2 text-sm hover:bg-black hover:bg-opacity-30`}
+                                        onClick={() => router.push("/articles/")}
+                                    >
+                                        Articles
+                                    </button>
+                                </Menu.Item>
+                                <Menu.Item>
+                                    <button
+                                        className={`text-gray-300
+                                        } group flex w-full items-center rounded-md px-2 py-2 text-sm hover:bg-black hover:bg-opacity-30`}
                                         onClick={() => router.push("/snippets/")}
                                     >
                                         Snippets

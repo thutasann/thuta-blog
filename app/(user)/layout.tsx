@@ -28,7 +28,7 @@ export default function RootLayout({
       <AnimatePresence>
         <body className="bg-gray-100 dark:bg-[#1F2937] text-[#1a1a1a] dark:text-gray-300">
           <NextNProgress
-              color='#FF0000'
+              color='#2D8995'
               startPosition={0.3}
               stopDelayMs={100}
               height={3}

@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://thutablog.vercel.app/blogs</loc><lastmod>2023-01-03T03:35:19.158Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://thutablog.vercel.app/snippets</loc><lastmod>2023-01-03T03:35:19.158Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://thutablog.vercel.app/articles</loc><lastmod>2023-01-03T03:35:19.158Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://thutablog.vercel.app</loc><lastmod>2023-01-03T03:35:19.158Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://thutablog.vercel.app/snippets/how-to-write-custom-usequery-custom-hook</loc><lastmod>2023-01-03T03:35:19.158Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://thutablog.vercel.app/snippets/how-to-write-effective-router-helper-in-nextjs</loc><lastmod>2023-01-03T03:35:19.158Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://thutablog.vercel.app/blogs/why-did-i-choose-frontend-web-development</loc><lastmod>2023-01-03T03:35:19.158Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://thutablog.vercel.app/blogs/how-i-kickoff-my-software-developer-career</loc><lastmod>2023-01-03T03:35:19.158Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://thutablog.vercel.app/blogs/how-to-implement-react-query-for-nextjs-project</loc><lastmod>2023-01-03T03:35:19.158Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://thutablog.vercel.app/blogs/how-to-start-learning-ios-mobile-app-development</loc><lastmod>2023-01-03T03:35:19.158Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/snippets</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/articles/aws-quickstart</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/articles/gpt-3-generated-poetry</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/articles/qr-code-micro-app</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/articles/retro-games-with-pico-8</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/articles/saas-starter-app</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/articles/wolfhunter</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/blogs</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/articles</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/snippets/how-to-write-custom-usequery-custom-hook</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/snippets/how-to-write-effective-router-helper-in-nextjs</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/blogs/why-did-i-choose-frontend-web-development</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/blogs/how-i-kickoff-my-software-developer-career</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/blogs/how-to-implement-react-query-for-nextjs-project</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://thutablog.vercel.app/blogs/how-to-start-learning-ios-mobile-app-development</loc><lastmod>2023-01-03T04:48:24.809Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
