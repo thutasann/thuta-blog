@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { PostMetadata } from "../../types/articles";
@@ -7,7 +5,7 @@ import { PostMetadata } from "../../types/articles";
 const PostPreview = (props: PostMetadata) => {
     return (
         <Link
-            href={`/articles/${props.slug}`}
+            href={`/articles/${encodeURIComponent(props.slug)}`}
             className="p-4 transition-all duration-700 ease-in-out bg-transparent border rounded-md shadow-sm cursor-pointer border-primary-teal hover:border-secondary-teal hover:shadow-md group"
         >
             <p className="flex items-center text-sm text-gray-400">

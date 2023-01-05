@@ -41,16 +41,16 @@ function Header() {
                         />
                     </div>
                     <div className='items-center hidden px-4 space-x-5 md:flex text-md text-primary-black dark:text-gray-300'>
-                        <Link href={"/"} className="navLink">
+                        <Link href={"/"} className="navLink" shallow={true}>
                             Home
                         </Link>
-                        <Link href={"/blogs/"} className="navLink">
+                        <Link href={"/blogs/"} className="navLink" shallow={true}>
                             Blogs
                         </Link>
-                        <Link href={"/articles/"} className="navLink">
+                        <Link href={"/articles/"} className="navLink" shallow={true}>
                             Articles
                         </Link>
-                        <Link href={"/snippets/"} className="navLink">
+                        <Link href={"/snippets/"} className="navLink" shallow={true}>
                             Snippets
                         </Link>
                         <span className="navLink">

@@ -19,7 +19,6 @@ type Props = {
     }
 }
 
-// Revalidate the page every 60 seconds
 export const revalidate = 30;
 
 // Static Site Generation

@@ -2,7 +2,7 @@ import React from 'react'
 import getPostMetaData from '../../../components/article/getPostMetadata'
 import PostPreview from '../../../components/article/PostPreview'
 
-function ArticlesPage() {
+async function ArticlesPage() {
 
     const postMetaData = getPostMetaData();
     const postPreViews = postMetaData?.map((post) => (

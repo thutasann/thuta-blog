@@ -4,7 +4,7 @@ import fs from "fs";
 import { Meta } from "../../../../types/typings";
 import Head from "../../../head"
 
-const getPostContent = (slug: string) => {
+const getPostContent = async (slug: string) => {
     const folder = "articles/";
     const file = `${folder}${slug}.md`;
     const content = fs.readFileSync(file, "utf8");
@@ -12,7 +12,9 @@ const getPostContent = (slug: string) => {
     return matterResult;
 };
 
-export const generateStaticParams = async () => {
+export const revalidate = 30;
+
+export async function generateStaticParams() {
     const posts = getPostMetaData();
     return posts.map((post) => ({
         slug: post.slug,
@@ -23,7 +25,7 @@ export const generateStaticParams = async () => {
 export default async function ArticleDetailHead(props : any) {
 
     const slug = props.params.slug;
-    const post = getPostContent(slug);
+    const post = await getPostContent(slug);
 
 
     let meta: Meta = {
