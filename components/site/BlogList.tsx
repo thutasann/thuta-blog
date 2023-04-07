@@ -28,7 +28,6 @@ function BlogList({posts, isHidden, title, categories}: Props) {
     const route = usePathname();
     const router = useRouter();
 
-    // @ts-ignore
     const filteredPosts = category?.name === "all" || isHidden || category === null ? posts : posts.filter((post) => post.categories.find(cate => cate.title === category?.name ));
 
     return (
@@ -68,7 +67,7 @@ function BlogList({posts, isHidden, title, categories}: Props) {
                                         <Image
                                             className="object-cover object-center rounded-[20px] lg:object-center"
                                             src={urlFor(post.mainImage).url()}
-                                            loading="eager"
+                                            loading="lazy"
                                             placeholder='blur'
                                             blurDataURL={urlFor(post.mainImage).url()}
                                             alt={post.author.name}
